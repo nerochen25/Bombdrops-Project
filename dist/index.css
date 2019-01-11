@@ -1,6 +1,70 @@
 body {
-    background-image: url('../image_resource/City_Landscape_Background.jpg');
+    background-image: url('https://i.imgur.com/4jf04HT.gif?noredirect');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;  
+}
+
+#player_name {
+    margin: 0 auto;
+    top: 0px;
+}
+#player_name_div {
+    position: fixed;
+    bottom: 0px;
+    left: 37%;
+    width: 100%;
+    height: auto;
+    padding: 1%;
+    margin-bottom: 100px;
+}
+
+#player_name_input {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #23274B;
+    border-radius: 7px;
+    background-color: #ffffff8f;
+    width: 20%
+}
+
+#speed_controller_btn {
+    width: 9.5%;
+    background-color: #177b8dd4;
+    box-sizing: inherit;
+    color: #FFFFFF !important;
+    height: 3rem;
+    line-height: 2rem;
+    font-size: 1rem;
+    padding: -7px 43px;
+    border: none;
+    position: relative;
+    -webkit-appearance: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 350;
+    transition: all 0.25s ease-in-out !important;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Viga', sans-serif;
+}
+#kill_bomb_btn {
+    width: 9.5%;
+    background-color: #177b8dd4;
+    box-sizing: inherit;
+    color: #FFFFFF !important;
+    height: 3rem;
+    line-height: 2rem;
+    font-size: 1rem;
+    padding: -7px 43px;
+    border: none;
+    position: relative;
+    -webkit-appearance: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 350;
+    transition: all 0.25s ease-in-out !important;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Viga', sans-serif;
 }

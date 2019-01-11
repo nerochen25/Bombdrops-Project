@@ -1,16 +1,8 @@
-
 window.onload = function() {
-  // var canvas = document.getElementById('canvas'); 
-  // var context = canvas.getContext('2d');
-  // var backGroundImage = new Image();
-
-  // backGroundImage.onload = function() {
-  //     context.drawImage(backGroundImage, 0, 0, 1900, 930);
-  // };
-
-  // backGroundImage.src = './image_resource/City_Landscape_Background.jpg';
   var bombImage = new Image();
   bombImage.src = '../image_resource/bomb_sprite_sheet.png';
+
+  var speed = 10;
 
   function sprite (options) {
                   
@@ -19,7 +11,7 @@ window.onload = function() {
           tickCount = 0,
           ticksPerFrame = options.ticksPerFrame || 0,
           numberOfFrames = options.numberOfFrames || 1,
-          moveDown = options.moveDown || 0;
+          moveDown = speed;
           moveRight = options.moveRight || 0;
 
                       
@@ -37,14 +29,10 @@ window.onload = function() {
               // Go to the next frame
               if (frameIndex < numberOfFrames - 1) {
                   frameIndex += 1; //frequency of frames
-                  moveDown += 3; //speed of falling
+                  moveDown += speed; //speed of falling
                   // moveRight += 10; //speed of shifting to right
                   if (moveDown === 1600) {
-
                       moveDown = 0;
-                  }
-                  if (moveRight === 400) {
-                      moveRight = 0;
                   }
               } else {
                   frameIndex = 0;
@@ -69,6 +57,13 @@ window.onload = function() {
 
       return that;
   }
+
+  function speedController() {
+    console.log(speed);
+    return speed += 1;
+  }
+  const button = document.getElementById('speed_controller_btn')
+  button.addEventListener('click', speedController)
  
   var canvas = document.getElementById("bombdropsAnimation");
   canvas.width = 1000;
@@ -83,11 +78,42 @@ window.onload = function() {
       moveRight: 200
   });
 
+  var bomb1 = new sprite({
+    context: canvas.getContext("2d"),
+    width: 1704,    //width of the photo
+    height: 1000,   //height here doesnt matter
+    image: bombImage,
+    numberOfFrames: 8, //num of frames of the photo
+    moveDown: 0,
+    moveRight: 700
+});
+
   function gameLoop () {
       bomb.update();
       bomb.render();
+      bomb1.update();
+      bomb1.render();
       window.requestAnimationFrame(gameLoop);
   }
  
   bombImage.addEventListener("load", gameLoop);
 }
+
+
+// window.onload = function() {
+//     var bombImage = new Image();
+//     bombImage.src = '../image_resource/bomb_sprite_sheet.png';
+//     var options = {
+//         rameIndex: 0,
+//         tickCount: 0,
+//         ticksPerFrame: 0,
+//         numberOfFrames: 8,
+//         moveDown: 0,
+//         moveRight: 700,
+//         context: canvas.getContext("2d"),
+//         width: 1704,
+//         height: 1000,
+//         image: bombImage,
+//     }
+//   console.log(new Bomb(options));
+// }
