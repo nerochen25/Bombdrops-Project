@@ -1,0 +1,6 @@
+body {
+    background-image: url('../image_resource/City_Landscape_Background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;  
+}
