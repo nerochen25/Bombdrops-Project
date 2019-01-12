@@ -33,10 +33,8 @@ window.onload = function() {
                   console.log(moveDown);
                   
                   // moveRight += 10; //speed of shifting to right
-                  if (moveDown >= 1000) {
-                      console.log('hello');
-                      
-                      moveDown = 0;
+                  if (moveDown >= 1000) {                      
+                      moveDown = speed;
                     //   moveRight += 400;
                     //   if (moveRight === 10000) {
                     //       moveRight = 0;
