@@ -2,7 +2,7 @@ window.onload = function() {
   var bombImage = new Image();
   bombImage.src = '../image_resource/bomb_sprite_sheet.png';
 
-  var speed = 1;
+  var speed = 0;
 
   function sprite (options) {
                   
@@ -29,12 +29,11 @@ window.onload = function() {
               // Go to the next frame
               if (frameIndex < numberOfFrames - 1) {
                   frameIndex += 1; //frequency of frames
-                  moveDown += speed; //speed of falling
-                  console.log(moveDown);
-                  
+                  moveDown += speedController(); //speed of falling                  
                   // moveRight += 10; //speed of shifting to right
-                  if (moveDown >= 1000) {                      
+                  if (moveDown >= 1200) {                      
                       moveDown = speed;
+                      speed = 0
                     //   moveRight += 400;
                     //   if (moveRight === 10000) {
                     //       moveRight = 0;
@@ -72,7 +71,7 @@ window.onload = function() {
             moveRight, //dx, move bomb to right by increasing this
             moveDown, //dy, move bomb downward by increasing this
             that.width / numberOfFrames - 100, //dWidth, width size of the image
-            that.height - 500); //dHeight, height size of the image
+            that.height - 400); //dHeight, height size of the image
         };
 
       return that;
@@ -80,25 +79,22 @@ window.onload = function() {
 
   function speedController() {
     speedMeteor.innerHTML = `Speed: ${speed}`
-    return speed += 0.5;
+    return speed += 0.05; //put gravity formula here, PreResult + 0.1 * loopCount
   }
 
-  function pauseBtn() {
-
-  }
-  const button = document.getElementById('speed_controller_btn')
-  button.addEventListener('click', speedController)
+  const speedControllerBtn = document.getElementById('speed_controller_btn')
+  speedControllerBtn.addEventListener('click', speedController)
   const speedMeteor = document.getElementById('speed_meteor')
   speedMeteor.innerHTML = `Speed: ${speed}`
 
  
   var canvas = document.getElementById("bombdropsAnimation");
-  canvas.width = 1000;
-  canvas.height = 800;
+  canvas.width = 400;
+  canvas.height = 1200;
   var bomb = new sprite({
       context: canvas.getContext("2d"),
       width: 1704,    //width of the photo
-      height: 1000,   //height here doesnt matter
+      height: 1200,   //height here doesnt matter
       image: bombImage,
       numberOfFrames: 8, //num of frames of the photo
       moveDown: 0,
@@ -106,7 +102,7 @@ window.onload = function() {
   });
   
 
-  function gameLoop () {
+  function gameLoop () {    
     bomb.update();
     bomb.render();
     window.requestAnimationFrame(gameLoop);
@@ -115,4 +111,3 @@ window.onload = function() {
   bombImage.addEventListener("load", gameLoop);
 
 }
-
