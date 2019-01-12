@@ -33,7 +33,7 @@ window.onload = function() {
                   console.log(moveDown);
                   
                   // moveRight += 10; //speed of shifting to right
-                  if (moveDown >= 600) {
+                  if (moveDown >= 1000) {
                       console.log('hello');
                       
                       moveDown = 0;
@@ -91,6 +91,8 @@ window.onload = function() {
   const button = document.getElementById('speed_controller_btn')
   button.addEventListener('click', speedController)
   const speedMeteor = document.getElementById('speed_meteor')
+  speedMeteor.innerHTML = `Speed: ${speed}`
+
  
   var canvas = document.getElementById("bombdropsAnimation");
   canvas.width = 1000;
