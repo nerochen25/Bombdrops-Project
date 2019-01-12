@@ -33,6 +33,10 @@ window.onload = function() {
                   // moveRight += 10; //speed of shifting to right
                   if (moveDown === 1600) {
                       moveDown = 0;
+                    //   moveRight += 400;
+                    //   if (moveRight === 10000) {
+                    //       moveRight = 0;
+                    //   }
                   }
               } else {
                   frameIndex = 0;
@@ -40,7 +44,7 @@ window.onload = function() {
           }
       };
 
-      that.render = function () {
+    that.render = function () {
           that.context.clearRect(0,0, that.width, that.height);
 
           that.context.drawImage(
@@ -53,7 +57,21 @@ window.onload = function() {
               moveDown, //dy, move bomb downward by increasing this
               that.width / numberOfFrames - 100, //dWidth, width size of the image
               that.height - 500); //dHeight, height size of the image
-          };
+    };
+    that.render1 = function () {
+        that.context.clearRect(0,0, that.width, that.height);
+
+        that.context.drawImage(
+            that.image, //image
+            frameIndex * that.width / numberOfFrames, //sx
+            0, //sy, bomb shifts up and gets cut
+            that.width / numberOfFrames, //sWidth
+            that.height, //sHeight, sqeeze the image shorter
+            moveRight, //dx, move bomb to right by increasing this
+            moveDown, //dy, move bomb downward by increasing this
+            that.width / numberOfFrames - 100, //dWidth, width size of the image
+            that.height - 500); //dHeight, height size of the image
+        };
 
       return that;
   }
@@ -62,11 +80,15 @@ window.onload = function() {
     console.log(speed);
     return speed += 1;
   }
+
+  function pauseBtn() {
+
+  }
   const button = document.getElementById('speed_controller_btn')
   button.addEventListener('click', speedController)
  
   var canvas = document.getElementById("bombdropsAnimation");
-  canvas.width = 1000;
+  canvas.width = 20000;
   canvas.height = 1000;
   var bomb = new sprite({
       context: canvas.getContext("2d"),
@@ -77,43 +99,15 @@ window.onload = function() {
       moveDown: 0,
       moveRight: 200
   });
-
-  var bomb1 = new sprite({
-    context: canvas.getContext("2d"),
-    width: 1704,    //width of the photo
-    height: 1000,   //height here doesnt matter
-    image: bombImage,
-    numberOfFrames: 8, //num of frames of the photo
-    moveDown: 0,
-    moveRight: 700
-});
+  
 
   function gameLoop () {
-      bomb.update();
-      bomb.render();
-      bomb1.update();
-      bomb1.render();
-      window.requestAnimationFrame(gameLoop);
+    bomb.update();
+    bomb.render();
+    window.requestAnimationFrame(gameLoop);
   }
- 
+
   bombImage.addEventListener("load", gameLoop);
+
 }
 
-
-// window.onload = function() {
-//     var bombImage = new Image();
-//     bombImage.src = '../image_resource/bomb_sprite_sheet.png';
-//     var options = {
-//         rameIndex: 0,
-//         tickCount: 0,
-//         ticksPerFrame: 0,
-//         numberOfFrames: 8,
-//         moveDown: 0,
-//         moveRight: 700,
-//         context: canvas.getContext("2d"),
-//         width: 1704,
-//         height: 1000,
-//         image: bombImage,
-//     }
-//   console.log(new Bomb(options));
-// }

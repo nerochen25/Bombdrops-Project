@@ -1,3 +1,3 @@
-function playerNameInput() {
-    document.getElementById('player_name')
-}
+// function playerNameInput() {
+//     document.getElementById('player_name')
+// }
