@@ -31,7 +31,7 @@ window.onload = function() {
                   frameIndex += 1; //frequency of frames
                   moveDown += speed; //speed of falling
                   // moveRight += 10; //speed of shifting to right
-                  if (moveDown === 1600) {
+                  if (moveDown === 1000) {
                       moveDown = 0;
                     //   moveRight += 400;
                     //   if (moveRight === 10000) {
@@ -80,12 +80,15 @@ window.onload = function() {
     return speed += 1;
   }
 
+  function pauseBtn() {
+
+  }
   const button = document.getElementById('speed_controller_btn')
   button.addEventListener('click', speedController)
  
   var canvas = document.getElementById("bombdropsAnimation");
   canvas.width = 1000;
-  canvas.height = 1000;
+  canvas.height = 800;
   var bomb = new sprite({
       context: canvas.getContext("2d"),
       width: 1704,    //width of the photo
