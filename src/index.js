@@ -2,7 +2,7 @@ window.onload = function() {
   var bombImage = new Image();
   bombImage.src = '../image_resource/bomb_sprite_sheet.png';
 
-  var speed = 0;
+  var speed = 1;
 
   function sprite (options) {
                   
@@ -11,7 +11,7 @@ window.onload = function() {
           tickCount = 0,
           ticksPerFrame = options.ticksPerFrame || 0,
           numberOfFrames = options.numberOfFrames || 1,
-          moveDown = speedController();
+          moveDown = options.moveDown || 0;
           moveRight = options.moveRight || 0;
 
                       
@@ -30,14 +30,18 @@ window.onload = function() {
               if (frameIndex < numberOfFrames - 1) {
                   frameIndex += 1; //frequency of frames
                   moveDown += speed; //speed of falling
+                  console.log(moveDown);
+                  
                   // moveRight += 10; //speed of shifting to right
-                  if (moveDown === 1000) {
+                  if (moveDown >= 600) {
+                      console.log('hello');
+                      
                       moveDown = 0;
                     //   moveRight += 400;
                     //   if (moveRight === 10000) {
                     //       moveRight = 0;
                     //   }
-                  }
+                  } 
               } else {
                   frameIndex = 0;
               }
@@ -77,7 +81,8 @@ window.onload = function() {
   }
 
   function speedController() {
-    return speed += 1;
+    speedMeteor.innerHTML = `Speed: ${speed}`
+    return speed += 0.5;
   }
 
   function pauseBtn() {
@@ -85,6 +90,7 @@ window.onload = function() {
   }
   const button = document.getElementById('speed_controller_btn')
   button.addEventListener('click', speedController)
+  const speedMeteor = document.getElementById('speed_meteor')
  
   var canvas = document.getElementById("bombdropsAnimation");
   canvas.width = 1000;
