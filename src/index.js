@@ -2,7 +2,7 @@ window.onload = function() {
   var bombImage = new Image();
   bombImage.src = '../image_resource/bomb_sprite_sheet.png';
 
-  var speed = 10;
+  var speed = 0;
 
   function sprite (options) {
                   
@@ -11,7 +11,7 @@ window.onload = function() {
           tickCount = 0,
           ticksPerFrame = options.ticksPerFrame || 0,
           numberOfFrames = options.numberOfFrames || 1,
-          moveDown = speed;
+          moveDown = speedController();
           moveRight = options.moveRight || 0;
 
                       
@@ -77,18 +77,14 @@ window.onload = function() {
   }
 
   function speedController() {
-    console.log(speed);
     return speed += 1;
   }
 
-  function pauseBtn() {
-
-  }
   const button = document.getElementById('speed_controller_btn')
   button.addEventListener('click', speedController)
  
   var canvas = document.getElementById("bombdropsAnimation");
-  canvas.width = 20000;
+  canvas.width = 1000;
   canvas.height = 1000;
   var bomb = new sprite({
       context: canvas.getContext("2d"),
