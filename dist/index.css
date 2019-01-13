@@ -32,7 +32,7 @@ body {
 }
 
 #speed_controller_btn {
-    width: 9.5%;
+    width: 9%;
     background-color: #177b8dd4;
     box-sizing: inherit;
     color: #FFFFFF !important;
@@ -87,5 +87,11 @@ body {
 }
 
 #bombdropsAnimation {
-    margin-top: -450px;
+    margin-top: -500px;  
+    /* margin-top: -240px; */
+
+}
+
+#score {
+    color: #65c468;
 }
