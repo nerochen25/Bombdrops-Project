@@ -82,6 +82,10 @@ body {
     color: #177b8dd4;
 }
 
+#missed_bomb {
+    color: #eb3569;
+}
+
 #bombdropsAnimation {
     margin-top: -450px;
 }

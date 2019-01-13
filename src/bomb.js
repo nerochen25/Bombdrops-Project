@@ -19,19 +19,23 @@ speedControllerBtn.addEventListener('click', speedController)
 const speedMeteor = document.getElementById('speed_meteor')
 speedMeteor.innerHTML = `Speed: ${speed}`
 const fallingPos = document.getElementById('falling_position')
+const missedBomb = document.getElementById('missed_bomb')
+
 
 
 class Bomb {
     constructor(options) {
         console.log('inside bomb class');
-        
+        this.missedBomb = 0;
         this.frameIndex = 0;
-        this.tickCount = 0,
+        this.tickCount = 0;
         this.ticksPerFrame = options.tickPerFrame || 0;
         this.numberOfFrames = options.numberOfFrames || 1;
         this.moveDown = options.moveDown || 0;
         this.moveRight = Math.random() * 1000;
-        fallingPos.innerHTML = `Postion: ${this.moveRight}`
+        fallingPos.innerHTML = `Postion: ${this.moveRight}`;
+        missedBomb.innerHTML = `Missed: ${this.missedBomb}`;
+
 
 
                       
@@ -56,7 +60,10 @@ class Bomb {
                     this.moveDown = speed;
                     speed = 0
                     this.moveRight = Math.random() * 1000;
+                    this.missedBomb += 1;
                     fallingPos.innerHTML = `Postion: ${this.moveRight}`
+                    missedBomb.innerHTML = `Missed: ${this.missedBomb}`;
+
                 } 
             } else {
                 this.frameIndex = 0;
