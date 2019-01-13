@@ -75,7 +75,11 @@ body {
 }
 
 #speed_meteor {
-    color: white;
+    color: #177b8dd4;
+}
+
+#falling_position {
+    color: #177b8dd4;
 }
 
 #bombdropsAnimation {
