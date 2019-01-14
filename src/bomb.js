@@ -1,3 +1,5 @@
+import mathProblemGenerator from './mathProblemGenerater';
+
 var bombImage = new Image();
 bombImage.src = '../image_resource/bomb_sprite_sheet.png';
 
@@ -32,7 +34,7 @@ class Bomb {
         this.width = options.width;
         this.height = options.height;
         this.image = bombImage;
-        this.mathProblem = options.mathProblem;
+        this.mathProblem = mathProblemGenerator();
 
         fallingPos.innerHTML = `Postion: ${this.moveRight}`;
         missedBomb.innerHTML = `Missed: ${this.missedBomb}`;
@@ -99,7 +101,7 @@ class Bomb {
         );
         
         //sub first arg of fillText with this.mathProblem later
-        this.context.fillText("17 * 11", this.moveRight + 60, this.moveDown + 120);
+        this.context.fillText(this.mathProblem, this.moveRight + 60, this.moveDown + 120);
         this.context.fillStyle = 'white';
         this.context.font = '18px Coiny';
     };
