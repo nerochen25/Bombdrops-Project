@@ -49,20 +49,6 @@ class Bomb {
         missedBomb.innerHTML = `Missed: ${this.missedBomb}`;
         startPos.innerHTML = `Start Falling Point: ${this.moveDown}`;
     };
-
-    // drawStationary(context) {
-    //     context.drawImage(
-    //         this.image,
-    //         this.frameIndex * this.width / this.numberOfFrames, //sx
-    //         0, //sy, bomb shifts up and gets cut
-    //         this.width / this.numberOfFrames, //sWidth
-    //         this.height, //sHeight, sqeeze the image shorter
-    //         this.moveRight + 150 , //dx, move bomb to right by increasing this
-    //         this.moveDown, //dy, move bomb downward by increasing this
-    //         this.width / this.numberOfFrames - 320, //dWidth, width size of the image
-    //         this.height - 600 //dHeight, height size of the image
-    //     );
-    //   }
     
     update() {
         this.tickCount += 1; 
@@ -117,7 +103,6 @@ class Bomb {
             this.height - 600 //dHeight, height size of the image
         );
         
-        //sub first arg of fillText with this.mathProblem later
         this.context.fillText(this.mathProblem, this.moveRight + 60, this.moveDown + 120);
         this.context.fillStyle = 'white';
         this.context.font = '18px Coiny';
