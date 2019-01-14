@@ -21,12 +21,11 @@ speedMeteor.innerHTML = `Speed: ${speed}`;
 
 const fallingPos = document.getElementById('falling_position')
 const missedBomb = document.getElementById('missed_bomb')
-const startPos = document.getElementById('start_position')
 
 
 class Bomb {
     constructor(options) {
-        this.missedBomb = 0;
+        this.missed = 0;
         this.frameIndex = 0;
         this.tickCount = 0;
         this.ticksPerFrame = options.tickPerFrame || 0;
@@ -39,15 +38,9 @@ class Bomb {
         this.image = bombImage;
         this.mathProblem = String(mathProblemGenerator(1,20));
         this.mathSolution = mathProblemSolver(this.mathProblem)
-        console.log(this.mathProblem);
-        console.log(mathProblemSolver(this.mathProblem));
-        console.log(document.getElementById("solution_input").value);
-
-
 
         fallingPos.innerHTML = `Postion: ${this.moveRight}`;
         missedBomb.innerHTML = `Missed: ${this.missedBomb}`;
-        startPos.innerHTML = `Start Falling Point: ${this.moveDown}`;
     };
     
     update() {
@@ -58,35 +51,24 @@ class Bomb {
 
             // Go to the next frame
             if (this.frameIndex < this.numberOfFrames - 1) {
-                this.frameIndex += 1; //frequency of frames
-                this.moveDown += speedController(); //speed of falling                  
-                // this.moveRight -= 1; //speed of shifting to left
-                console.log(document.getElementById("solution_input").value);
+                this.frameIndex += 1; //frequency of frames                
+                this.moveDown += 0.5; //speed of falling   
 
-                if (this.moveDown >= 1200) {                      
+                if (this.moveDown >= 1200) {  
                     this.moveDown = speed;
-                    speed = 0
-                    this.missedBomb += 1;
+                    speed = 0 //reset speed once bomb hits 1200
+                    this.missed = true;
                     this.moveRight = Math.random() * 1000 // randmize each bomb's falling position
                     this.mathProblem = String(mathProblemGenerator(1,20));
-                    console.log(this.mathProblem);   
-                    console.log(mathProblemSolver(this.mathProblem));
-                    console.log(document.getElementById("solution_input").value);
-                    document.getElementById("solution_input").value = '';
-
-     
+                    this.mathSolution = mathProblemSolver(this.mathProblem)
                     //keep updating the data of moveRight, missedBomb and moveDown
                     fallingPos.innerHTML = `Postion: ${this.moveRight}`;
                     missedBomb.innerHTML = `Missed: ${this.missedBomb}`;
-                    startPos.innerHTML = `Start Falling Point: ${this.moveDown}`;
-
-
                 } 
             } else {
                 this.context.clearRect(0,0, this.width, this.height);
-                this.frameIndex = 1;
+                this.frameIndex = 0;
             }
-            
         }
     };
 
@@ -105,7 +87,7 @@ class Bomb {
         
         this.context.fillText(this.mathProblem, this.moveRight + 60, this.moveDown + 120);
         this.context.fillStyle = 'white';
-        this.context.font = '18px Coiny';
+        this.context.font = '17px Coiny';
     };
 }
 
