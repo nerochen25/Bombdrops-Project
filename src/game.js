@@ -3,7 +3,7 @@ import Player from './player';
 
 var canvas = document.getElementById("bombdropsAnimation");
   canvas.width = 1400;
-  canvas.height = 1200;
+  canvas.height = 1200;  
 
 class Game {
     constructor(options) {
@@ -13,19 +13,20 @@ class Game {
         this.bombs = [];
         this.highestScore = parseInt(localStorage.getItem("highScore"));
         this.ctx = canvas.getContext("2d");
+        this.ctx.fillText("Hello World!", 10, 50);
 
-        this.animate();
+        this.gameLoop();
         // this.detectKeyPress();
     }
 
-    animate() {
-        if (this.bombs.length < 15) {
+    gameLoop() {
+        if (this.bombs.length < 3) {
             this.addBombs();
         }
 
         this.draw(this.ctx);
 
-        requestAnimationFrame(this.animate.bind(this));
+        requestAnimationFrame(this.gameLoop.bind(this));
     }
 
     addBombs() {
@@ -36,16 +37,23 @@ class Game {
             numberOfFrames: 8, //num of frames of the photo
             moveDown: 0
         }));
-      }
-      drawBombs(ctx) {
+    }
+
+    drawBombs(ctx) {
+        // ctx.fillText("Hello World!", 10, 50);
         this.bombs.forEach(bomb => {
+            
             bomb.update();
-          bomb.drawStationary(ctx);
+            bomb.context.fillText('20 x 13', bomb.moveRight + 90, bomb.moveDown + 10)
+            bomb.context.font = '15px Arial'
+            bomb.render();
         });
-      }
-      draw(ctx) {
+    }
+
+    draw(ctx) {
+        // ctx.fillText("Hello World!", 10, 50);
         this.drawBombs(ctx);
-      }
+    }
 }
 
 export default Game;
