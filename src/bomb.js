@@ -18,6 +18,7 @@ speedControllerBtn.addEventListener('click', speedController)
 const speedMeteor = document.getElementById('speed_meteor');
 speedMeteor.innerHTML = `Speed: ${speed}`;
 
+
 const fallingPos = document.getElementById('falling_position')
 const missedBomb = document.getElementById('missed_bomb')
 const startPos = document.getElementById('start_position')
@@ -40,6 +41,7 @@ class Bomb {
         this.mathSolution = mathProblemSolver(this.mathProblem)
         console.log(this.mathProblem);
         console.log(mathProblemSolver(this.mathProblem));
+        console.log(document.getElementById("solution_input").value);
 
 
 
@@ -73,6 +75,7 @@ class Bomb {
                 this.frameIndex += 1; //frequency of frames
                 this.moveDown += speedController(); //speed of falling                  
                 // this.moveRight -= 1; //speed of shifting to left
+                console.log(document.getElementById("solution_input").value);
 
                 if (this.moveDown >= 1200) {                      
                     this.moveDown = speed;
@@ -82,6 +85,9 @@ class Bomb {
                     this.mathProblem = String(mathProblemGenerator(1,20));
                     console.log(this.mathProblem);   
                     console.log(mathProblemSolver(this.mathProblem));
+                    console.log(document.getElementById("solution_input").value);
+                    document.getElementById("solution_input").value = '';
+
      
                     //keep updating the data of moveRight, missedBomb and moveDown
                     fallingPos.innerHTML = `Postion: ${this.moveRight}`;

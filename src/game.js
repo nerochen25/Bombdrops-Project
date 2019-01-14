@@ -19,7 +19,7 @@ class Game {
     }
 
     gameLoop() {
-        if (this.bombs.length < 3) {
+        if (this.bombs.length < 1) {
             this.addBombs();
         }
 
