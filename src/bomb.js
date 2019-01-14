@@ -1,4 +1,6 @@
-import mathProblemGenerator from './mathProblemGenerater';
+import mathProblemGenerator from './mathProblemGenerator';
+import mathProblemSolver from './mathProblemSolver';
+
 
 var bombImage = new Image();
 bombImage.src = '../image_resource/bomb_sprite_sheet.png';
@@ -7,14 +9,14 @@ var speed = 0;
 
 function speedController() {
     speedMeteor.innerHTML = `Speed: ${speed}`
-    return speed += 0.001; //put gravity formula here, PreResult + 0.1 * loopCount
+    return speed += 0.01; //put gravity formula here, PreResult + 0.1 * loopCount
 }
 
 const speedControllerBtn = document.getElementById('speed_controller_btn')
 speedControllerBtn.addEventListener('click', speedController)
 
-const speedMeteor = document.getElementById('speed_meteor')
-speedMeteor.innerHTML = `Speed: ${speed}`
+const speedMeteor = document.getElementById('speed_meteor');
+speedMeteor.innerHTML = `Speed: ${speed}`;
 
 const fallingPos = document.getElementById('falling_position')
 const missedBomb = document.getElementById('missed_bomb')
@@ -34,7 +36,12 @@ class Bomb {
         this.width = options.width;
         this.height = options.height;
         this.image = bombImage;
-        this.mathProblem = mathProblemGenerator();
+        this.mathProblem = String(mathProblemGenerator(1,20));
+        this.mathSolution = mathProblemSolver(this.mathProblem)
+        console.log(this.mathProblem);
+        console.log(mathProblemSolver(this.mathProblem));
+
+
 
         fallingPos.innerHTML = `Postion: ${this.moveRight}`;
         missedBomb.innerHTML = `Missed: ${this.missedBomb}`;
@@ -72,6 +79,10 @@ class Bomb {
                     speed = 0
                     this.missedBomb += 1;
                     this.moveRight = Math.random() * 1000 // randmize each bomb's falling position
+                    this.mathProblem = String(mathProblemGenerator(1,20));
+                    console.log(this.mathProblem);   
+                    console.log(mathProblemSolver(this.mathProblem));
+     
                     //keep updating the data of moveRight, missedBomb and moveDown
                     fallingPos.innerHTML = `Postion: ${this.moveRight}`;
                     missedBomb.innerHTML = `Missed: ${this.missedBomb}`;
