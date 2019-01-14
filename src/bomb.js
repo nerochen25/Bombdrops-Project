@@ -21,7 +21,6 @@ const startPos = document.getElementById('start_position')
 
 class Bomb {
     constructor(options) {
-        console.log('inside bomb class');
         this.missedBomb = 0;
         this.frameIndex = 0;
         this.tickCount = 0;
@@ -98,6 +97,11 @@ class Bomb {
             this.width / this.numberOfFrames - 320, //dWidth, width size of the image
             this.height - 600 //dHeight, height size of the image
         );
+        
+        //sub first arg of fillText with this.mathProblem later
+        this.context.fillText("17 * 11", this.moveRight + 60, this.moveDown + 120);
+        this.context.fillStyle = 'white';
+        this.context.font = '18px Coiny';
     };
 }
 

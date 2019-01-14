@@ -13,7 +13,6 @@ class Game {
         this.bombs = [];
         this.highestScore = parseInt(localStorage.getItem("highScore"));
         this.ctx = canvas.getContext("2d");
-        this.ctx.fillText("Hello World!", 10, 50);
 
         this.gameLoop();
         // this.detectKeyPress();
@@ -40,18 +39,13 @@ class Game {
     }
 
     drawBombs(ctx) {
-        // ctx.fillText("Hello World!", 10, 50);
         this.bombs.forEach(bomb => {
-            
             bomb.update();
-            bomb.context.fillText('20 x 13', bomb.moveRight + 90, bomb.moveDown + 10)
-            bomb.context.font = '15px Arial'
             bomb.render();
         });
     }
 
     draw(ctx) {
-        // ctx.fillText("Hello World!", 10, 50);
         this.drawBombs(ctx);
     }
 }
