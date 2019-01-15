@@ -53,7 +53,6 @@ class Bomb {
             if (this.frameIndex < this.numberOfFrames - 1) {
                 this.frameIndex += 1; //frequency of frames                
                 this.moveDown += 0.5; //speed of falling   
-                console.log(this.mathProblem)
 
                 if (this.moveDown >= 1200) {  
                     this.moveDown = speed;
@@ -62,7 +61,6 @@ class Bomb {
                     this.moveRight = Math.random() * 1000 // randmize each bomb's falling position
                     this.mathProblem = String(mathProblemGenerator(1,20));
                     this.mathSolution = mathProblemSolver(this.mathProblem)
-                    console.log(this.mathProblem)
 
                     //keep updating the data of moveRight, missedBomb and moveDown
                     fallingPos.innerHTML = `Postion: ${this.moveRight}`;
