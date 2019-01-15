@@ -25,10 +25,12 @@ playerScore.innerHTML = 'SCORE: 0'
 var missedBombs = document.getElementById('missed_bomb')
 // missedBombs.innerHTML = 'Missed: 0';
 
+var playerName = document.getElementById('player_name');
+
 class Game {
     constructor(options) {
         this.speed = 0.5;
-        this.playerName = null; 
+        this.playerName = ''; 
         this.playerScore = 0;
         this.missed = 0;
         this.userSolution = '';
@@ -42,9 +44,9 @@ class Game {
 
 
     gameLoop() {
-        // if (this.player === null) {
-        //     this.addPlayer();
-        // }
+        if (this.playerName === '') {
+            this.addPlayer();
+        }
         if (this.bombs.length != 3) {
             this.addBombs();
         }
@@ -54,9 +56,9 @@ class Game {
         requestAnimationFrame(this.gameLoop.bind(this));
     }
 
-    // addPlayer() {
-    
-    // }
+    addPlayer() {
+        
+    }
 
     addBombs() {
         
@@ -66,7 +68,7 @@ class Game {
             height: 1200,   //height here doesnt matter
             numberOfFrames: 8, //num of frames of the photo
             moveDown: 0,
-            speed: this.speed
+            speed: this.speed,
         }));        
     }
 
@@ -92,13 +94,13 @@ class Game {
                 this.bombs.forEach ((bomb, idx) => {
                     if (parseInt(bomb.mathSolution) === parseInt(this.userSolution)) {
                         bomb.image = bomb.explosionImage;
-                        // bomb.context.fillText('asd', bomb.moveRight + 60, bomb.moveDown + 120);
+                        bomb.context.fillText('asd', bomb.moveRight + 60, bomb.moveDown + 120);
                         this.playerScore += 1000;
                         playerScore.innerHTML = `SCORE: ${this.playerScore}`
                         this.bombs.splice(idx,1)
                         // setInterval(() => { this.bombs.splice(idx,1)
                             
-                        // }, 200);
+                        // }, 100);
                     } 
                 })
                 

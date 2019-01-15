@@ -67,10 +67,6 @@ class Bomb {
                     this.moveRight = Math.random() * 1000 // randmize each bomb's falling position
                     this.mathProblem = String(mathProblemGenerator(1,20));
                     this.mathSolution = mathProblemSolver(this.mathProblem)
-
-                    //keep updating the data of moveRight, missedBomb and moveDown
-                    // fallingPos.innerHTML = `Postion: ${this.moveRight}`;
-                    // missedBomb.innerHTML = `Missed: ${this.missed}`;
                 } 
             } else {
                 this.context.clearRect(0,0, this.width, this.height);
