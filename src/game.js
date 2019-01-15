@@ -75,17 +75,10 @@ class Game {
             if (key === 13) {
                 this.userSolution = document.getElementById('solution_input').value;
                 document.getElementById('solution_input').value = ''
-                // for (let i = 0; i < this.bombs.length; i++) {
-                //     if (parseInt(bomb.mathSolution) === parseInt(this.userSolution)) {
-                //         this.bombs.splice(idx,1)
-                //     }
-                // }
+                
                 this.bombs.forEach ((bomb, idx) => {
                     if (parseInt(bomb.mathSolution) === parseInt(this.userSolution)) {
-                        console.log(bomb.mathSolution)
-                        console.log(this.userSolution)
                         this.bombs.splice(idx,1)
-                        console.log(this.bombs.length);
                         
                     }
                 })
