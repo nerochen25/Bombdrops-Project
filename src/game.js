@@ -3,7 +3,7 @@ import Player from './player';
 
 var canvas = document.getElementById("bombdropsAnimation");
   canvas.width = 1400;
-  canvas.height = 1000;  
+  canvas.height = 1030;  
 
 class Game {
     constructor(options) {
@@ -22,9 +22,7 @@ class Game {
         if (this.bombs.length != 5) {
             this.addBombs();
         }
-        setInterval(function(){}, 5000)
-        this.draw(this.ctx);
-        this.removeBomb();
+        // 1/30 sec per loop
         requestAnimationFrame(this.gameLoop.bind(this));
     }
 
