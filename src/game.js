@@ -33,7 +33,7 @@ class Game {
         // if (this.player === null) {
         //     this.addPlayer();
         // }
-        if (this.bombs.length != 5) {
+        if (this.bombs.length != 3) {
             this.addBombs();
         }
         this.draw(this.context)
