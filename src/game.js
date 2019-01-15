@@ -36,7 +36,7 @@ class Game {
 
     gameLoop() {
         if (this.gameOver === false) {
-            if (this.bombs.length != 4) {
+            if (this.bombs.length != 2) {
                 this.addBombs();
             }
             this.draw(this.context)

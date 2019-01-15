@@ -10,13 +10,21 @@ explosionImage.src = '../image_resource/Bombdrops.png';
 
 var speed = 1;
 
-function speedController() {
+function increaseSpeed() {
     speedMeteor.innerHTML = `SPEED: ${speed}`
-    return speed += 0.25; //put gravity formula here, PreResult + 0.1 * loopCount
+    return speed += 0.25; 
 }
 
-var speedControllerBtn = document.getElementById('speed_controller_btn')
-speedControllerBtn.addEventListener('click', speedController)
+function reduceSpeed() {
+    speedMeteor.innerHTML = `SPEED: ${speed}`
+    return speed -= 0.25;
+}
+
+var increaseSpeedBtn = document.getElementById('increase_speed_btn')
+increaseSpeedBtn.addEventListener('click', increaseSpeed)
+
+var reducerSpeedBtn = document.getElementById('reduce_speed_btn')
+reducerSpeedBtn.addEventListener('click', reduceSpeed)
 
 var speedMeteor = document.getElementById('speed_meteor');
 speedMeteor.innerHTML = `SPEED: ${speed}`;

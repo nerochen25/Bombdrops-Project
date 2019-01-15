@@ -13,7 +13,7 @@
 //     return speed += 0.03; //put gravity formula here, PreResult + 0.1 * loopCount
 //   }
 
-//   const speedControllerBtn = document.getElementById('speed_controller_btn')
+//   const speedControllerBtn = document.getElementById('increase_speed_btn')
 //   speedControllerBtn.addEventListener('click', speedController)
 //   const speedMeteor = document.getElementById('speed_meteor')
 //   speedMeteor.innerHTML = `Speed: ${speed}`

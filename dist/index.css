@@ -37,7 +37,7 @@ body {
     text-align: center;
 }
 
-#speed_controller_btn {
+#increase_speed_btn {
     width: 9%;
     background-color: #177b8dd4;
     box-sizing: inherit;
@@ -60,7 +60,7 @@ body {
 
 
 }
-#kill_bomb_btn {
+#reduce_speed_btn {
     width: 9.5%;
     background-color: #177b8dd4;
     box-sizing: inherit;
