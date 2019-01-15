@@ -3,7 +3,7 @@ import Player from './player';
 
 var canvas = document.getElementById("bombdropsAnimation");
   canvas.width = 1400;
-  canvas.height = 1130; 
+  canvas.height = 1200; 
   
 var speedMeteor = document.getElementById('speed_meteor');
 speedMeteor.innerHTML = 'SPEED: 0.5';
@@ -35,17 +35,20 @@ class Game {
 
 
     gameLoop() {
-        if (this.playerName === '') {
-            this.addPlayer();
+        if (this.gameOver === false) {
+            if (this.playerName === '') {
+                this.addPlayer();
+            }
+            if (this.bombs.length != 3) {
+                this.addBombs();
+            }
+            this.draw(this.context)
+            this.removeBomb();
+            // 1/30 sec per loop
+            requestAnimationFrame(this.gameLoop.bind(this)); 
+        } else {
+            //Game over messgae
         }
-        if (this.bombs.length != 3) {
-            this.addBombs();
-        }
-        this.draw(this.context)
-        this.removeBomb();
-        console.log(this.bombs.length)
-        // 1/30 sec per loop
-        requestAnimationFrame(this.gameLoop.bind(this));
     }
 
     addPlayer() {
@@ -86,7 +89,8 @@ class Game {
                 this.bombs.forEach ((bomb, idx) => {
                     if (parseInt(bomb.mathSolution) === parseInt(this.userSolution)) {
                         bomb.image = bomb.explosionImage;
-                        bomb.context.fillText('asd', bomb.moveRight + 60, bomb.moveDown + 120);
+                        bomb.context.font = "100px, Arial"
+                        bomb.context.fillText('💥💥💥💥', bomb.moveRight + 60, bomb.moveDown + 120);
                         this.playerScore += 1000;
                         playerScore.innerHTML = `SCORE: ${this.playerScore}`
                         this.bombs.splice(idx,1)

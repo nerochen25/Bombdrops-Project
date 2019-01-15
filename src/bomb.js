@@ -29,7 +29,7 @@ speedMeteor.innerHTML = 'Speed : 0';
 
 class Bomb {
     constructor(options) {
-        this.speed = 1;
+        this.speed = 5;
         this.missed = 0;
         this.frameIndex = 0;
         this.tickCount = 0;
@@ -61,7 +61,7 @@ class Bomb {
                 this.frameIndex += 1; //frequency of frames                
                 this.moveDown += this.speed; //speed of falling   
 
-                if (this.moveDown >= 1200) {  
+                if (this.moveDown >= 1500) {  
                     this.missed += 1;
                     this.moveDown = this.speed;
                     this.moveRight = Math.random() * 1000 // randmize each bomb's falling position

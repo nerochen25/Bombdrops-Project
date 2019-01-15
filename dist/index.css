@@ -87,6 +87,8 @@ body {
 #speed_meteor {
     color: #177b8dd4;
     font-size:250%;
+    box-shadow: #177b8dd4;
+
 }
 
 #falling_position {
@@ -95,6 +97,8 @@ body {
 
 #missed_bomb {
     color: #eb3569;
+    box-shadow: #177b8dd4;
+
 }
 
 #bombdropsAnimation {
@@ -103,8 +107,9 @@ body {
 }
 
 #player_score {
-    color: #65c468;
+    color: #459947;
     font-size:250%;
+    box-shadow: #177b8dd4;
 
 }
 
@@ -130,7 +135,7 @@ body {
     font-family: 'Coiny', cursive;
     font-family: 'Luckiest Guy', cursive;
 
-    margin-bottom: 220px;
+    margin-bottom: 140px;
 }
 
 
