@@ -14,12 +14,13 @@ var playerScore = document.getElementById('player_score');
 playerScore.innerHTML = 'SCORE: 0'
 
 var missedBombs = document.getElementById('missed_bomb')
-// missedBombs.innerHTML = 'Missed: 0';
+missedBombs.innerHTML = 'Missed: 0';
 
 var playerName = document.getElementById('player_name');
 
 class Game {
     constructor(options) {
+        this.totalMissed = 0;
         this.speed = 1;
         this.totalBombs = 0;
         this.playerName = ''; 
@@ -30,7 +31,7 @@ class Game {
         this.bombs = [];
         this.highestScore = parseInt(localStorage.getItem("highScore"));
         this.ctx = canvas.getContext("2d");
-        this.gameLoop();        
+        this.gameLoop();  
     }
 
 
@@ -41,9 +42,18 @@ class Game {
             }
             this.draw(this.context)
             this.removeBomb();
+            this.countMissedBomb();
+            missedBombs.innerHTML = `Missed ${Math.round(this.totalMissed)}`;
+            this.endGame(Math.round(this.totalMissed));
             requestAnimationFrame(this.gameLoop.bind(this)); 
         } else {
-            //Game over messgae based on missed bombs
+            alert("Game over")
+        }
+    }
+
+    endGame(nummOfMissedBomb) {
+        if (nummOfMissedBomb >= 4) {
+            this.gameOver = true
         }
     }
 
@@ -93,12 +103,22 @@ class Game {
                         // setInterval(() => { this.bombs.splice(idx,1)
                         // }, 100);
                     }
-                })
-                
+                }) 
             }
         })
     }
 
+    countMissedBomb() {
+        this.bombs.forEach((bomb) => {
+            if (bomb.moveDown >= 1300) {
+                //each missed counts 229
+                this.missed += 1;
+            }
+        })
+        this.missed = this.missed / 229; //1.000
+        this.totalMissed += this.missed;
+        // console.log(this.totalMissed)
+    }
 }
 
 export default Game;
