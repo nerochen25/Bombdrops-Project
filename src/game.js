@@ -6,7 +6,7 @@ var canvas = document.getElementById("bombdropsAnimation");
   canvas.height = 1200; 
   
 var speedMeteor = document.getElementById('speed_meteor');
-speedMeteor.innerHTML = 'SPEED: 0.5';
+// speedMeteor.innerHTML = 'SPEED: 1';
 
 var missedBomb = document.getElementById('missed_bomb');
 
@@ -20,7 +20,8 @@ var playerName = document.getElementById('player_name');
 
 class Game {
     constructor(options) {
-        this.speed = 0.5;
+        this.speed = 1;
+        this.totalBombs = 0;
         this.playerName = ''; 
         this.playerScore = 0;
         this.missed = 0;
@@ -30,30 +31,22 @@ class Game {
         this.highestScore = parseInt(localStorage.getItem("highScore"));
         this.ctx = canvas.getContext("2d");
         this.gameLoop();        
-        // this.detectKeyPress();
     }
 
 
     gameLoop() {
         if (this.gameOver === false) {
-            if (this.playerName === '') {
-                this.addPlayer();
-            }
-            if (this.bombs.length != 3) {
+            if (this.bombs.length != 4) {
                 this.addBombs();
             }
             this.draw(this.context)
             this.removeBomb();
-            // 1/30 sec per loop
             requestAnimationFrame(this.gameLoop.bind(this)); 
         } else {
-            //Game over messgae
+            //Game over messgae based on missed bombs
         }
     }
 
-    addPlayer() {
-        
-    }
 
     addBombs() {
         
@@ -63,15 +56,18 @@ class Game {
             height: 1200,   //height here doesnt matter
             numberOfFrames: 8, //num of frames of the photo
             moveDown: 0,
-            speed: this.speed,
-        }));        
+            speed: 1,
+        }));      
     }
 
     drawBombs() {
         this.bombs.forEach(bomb => {
             bomb.update();
             bomb.render();
+            this.speed = bomb.speed;
+            speedMeteor.innerHTML = `SPEED: ${this.speed}`;
         });
+        
     }
 
     draw(ctx) {
@@ -91,12 +87,12 @@ class Game {
                         bomb.image = bomb.explosionImage;
                         bomb.context.font = "100px, Arial"
                         bomb.context.fillText('💥💥💥💥', bomb.moveRight + 60, bomb.moveDown + 120);
-                        this.playerScore += 1000;
+                        this.playerScore += 1000 * this.speed;
                         playerScore.innerHTML = `SCORE: ${this.playerScore}`
                         this.bombs.splice(idx,1)
                         // setInterval(() => { this.bombs.splice(idx,1)
                         // }, 100);
-                    } 
+                    }
                 })
                 
             }

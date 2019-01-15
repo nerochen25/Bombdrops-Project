@@ -8,18 +8,18 @@ bombImage.src = '../image_resource/bomb_sprite_sheet.png';
 var explosionImage = new Image();
 explosionImage.src = '../image_resource/Bombdrops.png';
 
-var speed = 0;
+var speed = 1;
 
 function speedController() {
-    speedMeteor.innerHTML = `Speed: ${speed}`
-    return speed += 0.01; //put gravity formula here, PreResult + 0.1 * loopCount
+    speedMeteor.innerHTML = `SPEED: ${speed}`
+    return speed += 0.25; //put gravity formula here, PreResult + 0.1 * loopCount
 }
 
 var speedControllerBtn = document.getElementById('speed_controller_btn')
 speedControllerBtn.addEventListener('click', speedController)
 
 var speedMeteor = document.getElementById('speed_meteor');
-speedMeteor.innerHTML = 'Speed : 0';
+speedMeteor.innerHTML = `SPEED: ${speed}`;
 
 
 // const fallingPos = document.getElementById('falling_position')
@@ -29,7 +29,7 @@ speedMeteor.innerHTML = 'Speed : 0';
 
 class Bomb {
     constructor(options) {
-        this.speed = 5;
+        this.speed = 1;
         this.missed = 0;
         this.frameIndex = 0;
         this.tickCount = 0;
@@ -59,8 +59,8 @@ class Bomb {
             // Go to the next frame
             if (this.frameIndex < this.numberOfFrames - 1) {
                 this.frameIndex += 1; //frequency of frames                
-                this.moveDown += this.speed; //speed of falling   
-
+                this.moveDown += speed; //speed of falling   
+                this.speed = speed
                 if (this.moveDown >= 1500) {  
                     this.missed += 1;
                     this.moveDown = this.speed;
@@ -74,6 +74,8 @@ class Bomb {
             }
         }
     };
+
+
 
     render() {
         this.context.drawImage(
