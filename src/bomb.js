@@ -1,5 +1,5 @@
-import mathProblemGenerator from './mathProblemGenerator';
-import mathProblemSolver from './mathProblemSolver';
+import mathProblemGenerator from './math_problem_generator';
+import mathProblemSolver from './math_problem_solver';
 
 
 var bombImage = new Image();

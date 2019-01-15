@@ -7,9 +7,9 @@ var canvas = document.getElementById("bombdropsAnimation");
 
 class Game {
     constructor(options) {
+        this.playerName = null; 
+        this.playerScore = 0;
         this.userSolution = '';
-        this.options = options;
-        this.score = 0;
         this.gameOver = false;
         this.bombs = [];
         this.highestScore = parseInt(localStorage.getItem("highScore"));
@@ -19,15 +19,23 @@ class Game {
     }
 
     gameStart() {
-        
+
     }
 
     gameLoop() {
+        if (this.player === null) {
+            this.addPlayer();
+        }
         if (this.bombs.length != 5) {
             this.addBombs();
         }
+
         // 1/30 sec per loop
         requestAnimationFrame(this.gameLoop.bind(this));
+    }
+
+    addPlayer() {
+    
     }
 
     addBombs() {
