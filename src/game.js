@@ -3,7 +3,17 @@ import Player from './player';
 
 var canvas = document.getElementById("bombdropsAnimation");
   canvas.width = 1400;
-  canvas.height = 1030;  
+  canvas.height = 1030; 
+  
+// function renderGamePage() {
+//     var startGameDiv = document.getElementById("start_game_div");
+//     startGameDiv.style.display = 'none';
+//     if (startGameDiv.style.display === "none") {
+//       startGameDiv.style.display = "block";
+//     } else {
+//       startGameDiv.style.display = "none";
+//     }
+//   }
 
 class Game {
     constructor(options) {
@@ -18,14 +28,11 @@ class Game {
         // this.detectKeyPress();
     }
 
-    gameStart() {
-
-    }
 
     gameLoop() {
-        if (this.player === null) {
-            this.addPlayer();
-        }
+        // if (this.player === null) {
+        //     this.addPlayer();
+        // }
         if (this.bombs.length != 5) {
             this.addBombs();
         }
@@ -34,9 +41,9 @@ class Game {
         requestAnimationFrame(this.gameLoop.bind(this));
     }
 
-    addPlayer() {
+    // addPlayer() {
     
-    }
+    // }
 
     addBombs() {
         this.bombs.push(new Bomb({
