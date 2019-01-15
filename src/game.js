@@ -3,7 +3,7 @@ import Player from './player';
 
 var canvas = document.getElementById("bombdropsAnimation");
   canvas.width = 1400;
-  canvas.height = 1030; 
+  canvas.height = 1130; 
   
 // function renderGamePage() {
 //     var startGameDiv = document.getElementById("start_game_div");
@@ -14,6 +14,11 @@ var canvas = document.getElementById("bombdropsAnimation");
 //       startGameDiv.style.display = "none";
 //     }
 //   }
+
+const missedBomb = document.getElementById('missed_bomb');
+
+const playerScore = document.getElementById('player_score');
+playerScore.innerHTML = 'Score: 0'
 
 class Game {
     constructor(options) {
@@ -79,6 +84,9 @@ class Game {
                 this.bombs.forEach ((bomb, idx) => {
                     if (parseInt(bomb.mathSolution) === parseInt(this.userSolution)) {
                         this.bombs.splice(idx,1)
+                        this.playerScore += 1000;
+                        playerScore.innerHTML = `Score: ${this.playerScore}`
+                    } else {
                         
                     }
                 })

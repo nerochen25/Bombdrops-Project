@@ -19,7 +19,7 @@ const speedMeteor = document.getElementById('speed_meteor');
 speedMeteor.innerHTML = `Speed: ${speed}`;
 
 
-const fallingPos = document.getElementById('falling_position')
+// const fallingPos = document.getElementById('falling_position')
 const missedBomb = document.getElementById('missed_bomb')
 
 
@@ -39,8 +39,8 @@ class Bomb {
         this.mathProblem = String(mathProblemGenerator(1,20));
         this.mathSolution = mathProblemSolver(this.mathProblem)
 
-        fallingPos.innerHTML = `Postion: ${this.moveRight}`;
-        missedBomb.innerHTML = `Missed: ${this.missedBomb}`;
+        // fallingPos.innerHTML = `Postion: ${this.moveRight}`;
+        missedBomb.innerHTML = `Missed: ${this.missed}`;
     };
     
     update() {
@@ -57,14 +57,14 @@ class Bomb {
                 if (this.moveDown >= 1200) {  
                     this.moveDown = speed;
                     speed = 0 //reset speed once bomb hits 1200
-                    this.missed = true;
+                    // this.missed = true;
                     this.moveRight = Math.random() * 1000 // randmize each bomb's falling position
                     this.mathProblem = String(mathProblemGenerator(1,20));
                     this.mathSolution = mathProblemSolver(this.mathProblem)
 
                     //keep updating the data of moveRight, missedBomb and moveDown
-                    fallingPos.innerHTML = `Postion: ${this.moveRight}`;
-                    missedBomb.innerHTML = `Missed: ${this.missedBomb}`;
+                    // fallingPos.innerHTML = `Postion: ${this.moveRight}`;
+                    missedBomb.innerHTML = `Missed: ${this.missed}`;
                 } 
             } else {
                 this.context.clearRect(0,0, this.width, this.height);
