@@ -5,6 +5,9 @@ import mathProblemSolver from './math_problem_solver';
 var bombImage = new Image();
 bombImage.src = '../image_resource/bomb_sprite_sheet.png';
 
+var explosionImage = new Image();
+explosionImage.src = '../image_resource/Bombdrops.png';
+
 var speed = 0;
 
 function speedController() {
@@ -12,19 +15,21 @@ function speedController() {
     return speed += 0.01; //put gravity formula here, PreResult + 0.1 * loopCount
 }
 
-const speedControllerBtn = document.getElementById('speed_controller_btn')
+var speedControllerBtn = document.getElementById('speed_controller_btn')
 speedControllerBtn.addEventListener('click', speedController)
 
-const speedMeteor = document.getElementById('speed_meteor');
-speedMeteor.innerHTML = `Speed: ${speed}`;
+var speedMeteor = document.getElementById('speed_meteor');
+speedMeteor.innerHTML = 'Speed : 0';
 
 
 // const fallingPos = document.getElementById('falling_position')
-const missedBomb = document.getElementById('missed_bomb')
+// const missedBomb = document.getElementById('missed_bomb')
+// missedBomb.innerHTML = `Missed: ${this.missed}`;
 
 
 class Bomb {
     constructor(options) {
+        this.speed = 1;
         this.missed = 0;
         this.frameIndex = 0;
         this.tickCount = 0;
@@ -36,11 +41,13 @@ class Bomb {
         this.width = options.width;
         this.height = options.height;
         this.image = bombImage;
+        this.explosionImage = explosionImage;
         this.mathProblem = String(mathProblemGenerator(1,20));
         this.mathSolution = mathProblemSolver(this.mathProblem)
 
         // fallingPos.innerHTML = `Postion: ${this.moveRight}`;
-        missedBomb.innerHTML = `Missed: ${this.missed}`;
+        // missedBomb.innerHTML = `Missed: ${this.missed}`;
+
     };
     
     update() {
@@ -52,19 +59,18 @@ class Bomb {
             // Go to the next frame
             if (this.frameIndex < this.numberOfFrames - 1) {
                 this.frameIndex += 1; //frequency of frames                
-                this.moveDown += 0.5; //speed of falling   
+                this.moveDown += this.speed; //speed of falling   
 
                 if (this.moveDown >= 1200) {  
-                    this.moveDown = speed;
-                    speed = 0 //reset speed once bomb hits 1200
-                    // this.missed = true;
+                    this.missed += 1;
+                    this.moveDown = this.speed;
                     this.moveRight = Math.random() * 1000 // randmize each bomb's falling position
                     this.mathProblem = String(mathProblemGenerator(1,20));
                     this.mathSolution = mathProblemSolver(this.mathProblem)
 
                     //keep updating the data of moveRight, missedBomb and moveDown
                     // fallingPos.innerHTML = `Postion: ${this.moveRight}`;
-                    missedBomb.innerHTML = `Missed: ${this.missed}`;
+                    // missedBomb.innerHTML = `Missed: ${this.missed}`;
                 } 
             } else {
                 this.context.clearRect(0,0, this.width, this.height);

@@ -14,16 +14,23 @@ var canvas = document.getElementById("bombdropsAnimation");
 //       startGameDiv.style.display = "none";
 //     }
 //   }
+var speedMeteor = document.getElementById('speed_meteor');
+speedMeteor.innerHTML = 'SPEED: 0.5';
 
-const missedBomb = document.getElementById('missed_bomb');
+var missedBomb = document.getElementById('missed_bomb');
 
-const playerScore = document.getElementById('player_score');
-playerScore.innerHTML = 'Score: 0'
+var playerScore = document.getElementById('player_score');
+playerScore.innerHTML = 'SCORE: 0'
+
+var missedBombs = document.getElementById('missed_bomb')
+// missedBombs.innerHTML = 'Missed: 0';
 
 class Game {
     constructor(options) {
+        this.speed = 0.5;
         this.playerName = null; 
         this.playerScore = 0;
+        this.missed = 0;
         this.userSolution = '';
         this.gameOver = false;
         this.bombs = [];
@@ -56,9 +63,10 @@ class Game {
         this.bombs.push(new Bomb({
             context: this.ctx,
             width: 1704,    //width of the photo
-            height: 1100,   //height here doesnt matter
+            height: 1200,   //height here doesnt matter
             numberOfFrames: 8, //num of frames of the photo
-            moveDown: 0
+            moveDown: 0,
+            speed: this.speed
         }));        
     }
 
@@ -83,12 +91,15 @@ class Game {
                 
                 this.bombs.forEach ((bomb, idx) => {
                     if (parseInt(bomb.mathSolution) === parseInt(this.userSolution)) {
-                        this.bombs.splice(idx,1)
+                        bomb.image = bomb.explosionImage;
+                        // bomb.context.fillText('asd', bomb.moveRight + 60, bomb.moveDown + 120);
                         this.playerScore += 1000;
-                        playerScore.innerHTML = `Score: ${this.playerScore}`
-                    } else {
-                        
-                    }
+                        playerScore.innerHTML = `SCORE: ${this.playerScore}`
+                        this.bombs.splice(idx,1)
+                        // setInterval(() => { this.bombs.splice(idx,1)
+                            
+                        // }, 200);
+                    } 
                 })
                 
             }
