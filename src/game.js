@@ -43,11 +43,15 @@ class Game {
             this.draw(this.context)
             this.removeBomb();
             this.countMissedBomb();
-            missedBombs.innerHTML = `Missed ${Math.round(this.totalMissed)}`;
-            this.endGame(Math.round(this.totalMissed));
+            missedBombs.innerHTML = `Missed ${Math.round(this.totalMissed * this.speed)}`;
+            this.endGame(Math.round(this.totalMissed) * this.speed);
             requestAnimationFrame(this.gameLoop.bind(this)); 
         } else {
             alert("Game over")
+            var beginGame = document.getElementById('game_begin');
+            beginGame.style.display = "none";
+            var gameDataDiv = document.getElementById('game_data_div');
+            gameDataDiv.style.display = "none";
         }
     }
 
