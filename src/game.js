@@ -36,7 +36,8 @@ class Game {
         if (this.bombs.length != 5) {
             this.addBombs();
         }
-
+        this.draw(this.context)
+        this.removeBomb();
         // 1/30 sec per loop
         requestAnimationFrame(this.gameLoop.bind(this));
     }
@@ -46,6 +47,7 @@ class Game {
     // }
 
     addBombs() {
+        
         this.bombs.push(new Bomb({
             context: this.ctx,
             width: 1704,    //width of the photo
