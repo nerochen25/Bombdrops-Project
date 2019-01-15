@@ -7,24 +7,38 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" media="screen" href="./index.css" />
         <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+
 
     </head>
     <body>
-        <input id='player_name_input' type="hidden">
 
         <div id="player_name_div">
-            <input id='solution_input' type="number" >
-            <br />
-            <button id='kill_bomb_btn' >Kill Bomb</button>
-            <button id='speed_controller_btn' >Increase Speed</button>
+            <div id='before_game'>
+                <h1 id='logo_h1'>
+                    BombDrops
+                </h1>
+                <img id='bomb_gif' src="../image_resource/bomb.gif" alt="">
+                <br/>
+                <input id='player_name_input' type="text" placeholder="Enter Name">
+                <br/>
+                <button id='start_game_btn'>Start Game</button>
+            </div>
+            <br/>
+            <div id='game_begin'>
+                <input id='solution_input' type="number" >
+                <br />
+                <button id='kill_bomb_btn' >Kill Bomb</button>
+                <button id='speed_controller_btn' >Increase Speed</button>
+            </div> 
         </div>
-        <div id='player_name'></div>
-        <h2 id='speed_meteor'></h2>
-        <h2 id='falling_position'></h2>
-        <h2 id='player_score'></h2>
-        <h2 id='missed_bomb'></h2>
+        <div id='game_data_div'>
+            <h2 id='speed_meteor'></h2>
+            <h2 id='player_score'></h2>
+            <h2 id='missed_bomb'></h2>
+        </div>
 
-        <canvas id='bombdropsAnimation'></canvas>
+        <canvas id='bombdropsAnimation'><button id='start_game_btn'>Start Game</button></canvas>
     
         <script type="application/javascript" src="./main.js"></script>
     </body>

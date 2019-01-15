@@ -5,15 +5,6 @@ var canvas = document.getElementById("bombdropsAnimation");
   canvas.width = 1400;
   canvas.height = 1130; 
   
-// function renderGamePage() {
-//     var startGameDiv = document.getElementById("start_game_div");
-//     startGameDiv.style.display = 'none';
-//     if (startGameDiv.style.display === "none") {
-//       startGameDiv.style.display = "block";
-//     } else {
-//       startGameDiv.style.display = "none";
-//     }
-//   }
 var speedMeteor = document.getElementById('speed_meteor');
 speedMeteor.innerHTML = 'SPEED: 0.5';
 
@@ -52,6 +43,7 @@ class Game {
         }
         this.draw(this.context)
         this.removeBomb();
+        console.log(this.bombs.length)
         // 1/30 sec per loop
         requestAnimationFrame(this.gameLoop.bind(this));
     }
@@ -99,7 +91,6 @@ class Game {
                         playerScore.innerHTML = `SCORE: ${this.playerScore}`
                         this.bombs.splice(idx,1)
                         // setInterval(() => { this.bombs.splice(idx,1)
-                            
                         // }, 100);
                     } 
                 })

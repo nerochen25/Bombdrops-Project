@@ -4,6 +4,8 @@ body {
     background-repeat: no-repeat;
     background-position: center center; 
     font-family: 'Coiny', cursive; 
+    font-family: 'Luckiest Guy', cursive;
+
 }
 
 #player_name {
@@ -21,6 +23,8 @@ body {
     padding: 1%;
     margin-bottom: 70px;
     font-family: 'Coiny', cursive;
+    font-family: 'Luckiest Guy', cursive;
+
 }
 
 #solution_input {
@@ -52,6 +56,8 @@ body {
     text-align: center;
     text-decoration: none;
     font-family: 'Coiny', cursive;
+    font-family: 'Luckiest Guy', cursive;
+
 
 }
 #kill_bomb_btn {
@@ -73,11 +79,14 @@ body {
     text-align: center;
     text-decoration: none;
     font-family: 'Coiny', cursive;
+    font-family: 'Luckiest Guy', cursive;
+
 
 }
 
 #speed_meteor {
     color: #177b8dd4;
+    font-size:250%;
 }
 
 #falling_position {
@@ -90,13 +99,64 @@ body {
 
 #bombdropsAnimation {
     margin-top: -500px;  
-    /* margin-top: -240px; */
 
 }
 
-#score {
+#player_score {
     color: #65c468;
+    font-size:250%;
+
 }
 
 
+#start_game_btn {
+    width: 19.5%;
+    background-color: #177b8dd4;
+    box-sizing: inherit;
+    color: #FFFFFF !important;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.2rem;
+    padding: -7px 43px;
+    border: none;
+    position: relative;
+    -webkit-appearance: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 350;
+    transition: all 0.25s ease-in-out !important;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Coiny', cursive;
+    font-family: 'Luckiest Guy', cursive;
 
+    margin-bottom: 220px;
+}
+
+
+#player_name_input {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #23274B;
+    border-radius: 7px;
+    background-color: #ffffff8f;
+    width: 20%;
+    text-align: center;
+    font-family: 'Coiny', cursive;
+    margin-top:30px;
+
+}
+
+#logo_h1 {
+    position: sticky;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 40pt;
+    margin-bottom: -170px;
+    z-index: 1;
+}
+
+#bomb_gif {
+    width: 144px;
+    margin-left: 95px;
+    margin-bottom: 20px;
+}
