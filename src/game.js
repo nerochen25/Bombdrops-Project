@@ -18,6 +18,10 @@ class Game {
         // this.detectKeyPress();
     }
 
+    gameStart() {
+        
+    }
+
     gameLoop() {
         if (this.bombs.length != 5) {
             this.addBombs();
