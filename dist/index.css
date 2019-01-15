@@ -86,7 +86,7 @@ body {
 
 #speed_meteor {
     color: #177b8dd4;
-    font-size:250%;
+    font-size:210%;
     box-shadow: #177b8dd4;
 
 }
@@ -97,6 +97,7 @@ body {
 
 #missed_bomb {
     color: #eb3569;
+    font-size:210%;
     box-shadow: #177b8dd4;
 
 }
@@ -108,7 +109,7 @@ body {
 
 #player_score {
     color: #459947;
-    font-size:250%;
+    font-size:210%;
     box-shadow: #177b8dd4;
 
 }
