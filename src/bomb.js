@@ -1,7 +1,6 @@
 import mathProblemGenerator from './math_problem_generator';
 import mathProblemSolver from './math_problem_solver';
 
-
 var bombImage = new Image();
 bombImage.src = '../image_resource/bomb_sprite_sheet.png';
 
@@ -29,12 +28,6 @@ reducerSpeedBtn.addEventListener('click', reduceSpeed)
 var speedMeteor = document.getElementById('speed_meteor');
 speedMeteor.innerHTML = `SPEED: ${speed}`;
 
-
-// const fallingPos = document.getElementById('falling_position')
-// const missedBomb = document.getElementById('missed_bomb')
-// missedBomb.innerHTML = `Missed: ${this.missed}`;
-
-
 class Bomb {
     constructor(options) {
         this.speed = 1;
@@ -52,10 +45,6 @@ class Bomb {
         this.explosionImage = explosionImage;
         this.mathProblem = String(mathProblemGenerator(1,20));
         this.mathSolution = mathProblemSolver(this.mathProblem)
-
-        // fallingPos.innerHTML = `Postion: ${this.moveRight}`;
-        // missedBomb.innerHTML = `Missed: ${this.missed}`;
-
     };
     
     update() {

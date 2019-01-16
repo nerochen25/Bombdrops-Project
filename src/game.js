@@ -21,10 +21,6 @@ let body = document.getElementById('body');
 
 let playerNameInput = document.getElementById('player_name_input');
 let myScore = document.getElementById('my_score');
-// let scoreList = documnet.getElementById('score_list');
-
-
-
 
 
 class Game {
