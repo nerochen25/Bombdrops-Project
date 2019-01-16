@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Bombdrops</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="./index.css" />
+        <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+
+
+    </head>
+    <body id='body'>
+
+        <div id="player_name_div">
+            <div id='before_game'>
+                <h1 id='logo_h1'>
+                    BombDrops
+                </h1>
+                <img id='bomb_gif' src="../image_resource/bomb.gif" alt="">
+                <br/>
+                <input id='player_name_input' type="text" placeholder="Enter Name">
+                <br/>
+                <button id='start_game_btn'>Start Game</button>
+                <h3 style="color:aliceblue; margin-left: -30px;">Copyright Ⓒ 2019 BombDrops by Nero Chen</h3>
+
+            </div>
+            <br/>
+            <div id='game_begin'>
+                <input id='solution_input' type="number" >
+                <br />
+                <button id='reduce_speed_btn' >Slow Down</button>
+                <button id='increase_speed_btn' >Speed Up</button>
+                <p style="color:aliceblue; margin-top:30px; margin-left: -30px;">Increase speed to gain more score per bomb</p>
+                
+               
+            </div> 
+        </div>
+        <div id='game_data_div'>
+            <h2 id='speed_meteor'></h2>
+            <h2 id='player_score'></h2>
+            <h2 id='missed_bomb'></h2>
+        </div>
+        <div id="game_over_div" style="display: none;">
+            <h1 id= "your_score">Your Score</h1>
+            <h2 id="my_score"></h2>
+            <br />
+            <h1 id="top_10_scores">Top 10 Score Board</h1>
+            <ul id='score_list'></ul>
+        </div>
+
+        <canvas id='bombdropsAnimation'><button id='start_game_btn'>Start Game</button></canvas>
+    
+        <script type="application/javascript" src="./main.js"></script>
+    </body>
+</html>
