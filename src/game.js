@@ -154,13 +154,11 @@ class Game {
     countMissedBomb() {
         this.bombs.forEach((bomb) => {
             if (bomb.moveDown >= 1300) {
-                //each missed counts 229
                 this.missed += 1;
             }
         })
-        this.missed = this.missed / 229; //1.000
+        this.missed = this.missed / 229;
         this.totalMissed += this.missed;
-        // console.log(this.totalMissed)
     }
 }
 
