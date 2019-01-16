@@ -2,10 +2,10 @@ import mathProblemGenerator from './math_problem_generator';
 import mathProblemSolver from './math_problem_solver';
 
 var bombImage = new Image();
-bombImage.src = '../image_resource/bomb_sprite_sheet.png';
+bombImage.src = './image_resource/bomb_sprite_sheet.png';
 
 var explosionImage = new Image();
-explosionImage.src = '../image_resource/Bombdrops.png';
+explosionImage.src = './image_resource/Bombdrops.png';
 
 var speed = 1;
 
