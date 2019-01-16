@@ -10,13 +10,17 @@ explosionImage.src = './image_resource/Bombdrops.png';
 var speed = 1;
 
 function increaseSpeed() {
-    speedMeteor.innerHTML = `🚀 SPEED: ${speed}`
-    return speed += 0.25; 
+    if (speed < 3) {
+        speedMeteor.innerHTML = `🚀 SPEED: ${speed}`
+        return speed += 0.25; 
+    }
 }
 
 function reduceSpeed() {
-    speedMeteor.innerHTML = `🚀 SPEED: ${speed}`
-    return speed -= 0.25;
+    if (speed > 0.25) {
+        speedMeteor.innerHTML = `🚀 SPEED: ${speed}`
+        return speed -= 0.25;
+    }
 }
 
 var increaseSpeedBtn = document.getElementById('increase_speed_btn')
