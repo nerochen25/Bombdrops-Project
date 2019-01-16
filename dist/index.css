@@ -268,3 +268,20 @@ li {
     padding-bottom: 10px;
     border-radius: 10px;
 }
+
+#github-logo {
+    width: 60px;
+  }
+  
+  #linkedin-logo {
+    width: 60px;
+  };
+  
+  #github-linkedin {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 150px;
+    padding-top: 19px;
+    margin-bottom: -50px;
+  }
