@@ -26,7 +26,7 @@ let myScore = document.getElementById('my_score');
 
 
 class Game {
-    constructor(options) {
+    constructor() {
         this.totalMissed = 0;
         this.speed = 1.5;
         this.totalBombs = 0;
@@ -87,7 +87,6 @@ class Game {
                     var li = document.createElement("li");
                     li.setAttribute('id', 'score_list_item')
                     li.appendChild(document.createTextNode(`💥${i+1}💥 ${scores[i][0]}:${'    '}${scores[i][1]}`));
-                    console.log(scores[i])
                     scoreOrderList.appendChild(li);   
                 } 
             }

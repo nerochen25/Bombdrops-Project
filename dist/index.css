@@ -187,6 +187,8 @@
 #my_score {
     font-size: 30pt;
     color: #426789;
+    margin-top: -19px;
+    margin-bottom: -14px;
 }
 
 #your_score {
@@ -205,7 +207,7 @@
     text-align: left;
     align-content: center;
     align-items: center;
-    padding-left: 300px;
+    padding-left: 270px;
 }
 
 li {
