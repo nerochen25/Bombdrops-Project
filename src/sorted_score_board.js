@@ -1,5 +1,4 @@
-function sortedScoreBoard(obj)
-{
+function sortedScoreBoard(obj) {
 	var sortable=[];
 	for(var key in obj)
 		if(obj.hasOwnProperty(key))
@@ -7,11 +6,11 @@ function sortedScoreBoard(obj)
 	
 	sortable.sort(function(a, b)
 	{
-		var x=a[1].toLowerCase(),
-			y=b[1].toLowerCase();
+		var x=parseInt(a[1]),
+			y=parseInt(b[1]);
 		return x<y ? -1 : x>y ? 1 : 0;
 	});
-	return sortable; 
+	return sortable.reverse(); 
 }
 
 export default sortedScoreBoard;

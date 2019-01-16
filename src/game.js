@@ -2,6 +2,8 @@ import Bomb from "./bomb";
 import Player from './player';
 import sortedScoreBoard from './sorted_score_board';
 
+let myStorage = window.localStorage;
+
 var canvas = document.getElementById("bombdropsAnimation");
   canvas.width = 1400;
   canvas.height = 1200; 
@@ -59,7 +61,7 @@ class Game {
             this.endGame(Math.round(this.totalMissed) * this.speed);
             requestAnimationFrame(this.gameLoop.bind(this)); 
         } else if (this.gameOver === true) {
-            window.localStorage.setItem(this.playerName, this.playerScore)
+            myStorage.setItem(this.playerName, this.playerScore)
             canvas.style.display = "none";
             body.style.backgroundColor = "white";
             beginGame.style.display = "none";
@@ -69,7 +71,7 @@ class Game {
             
             if (this.avoidTwice === false ) {
                 this.avoidTwice = true;
-                let sortedLocalStorage = sortedScoreBoard(window.localStorage).reverse();
+                let sortedLocalStorage = sortedScoreBoard(myStorage)
                 let names = Object.keys(sortedLocalStorage);
                 let scores = Object.values(sortedLocalStorage);
                 
