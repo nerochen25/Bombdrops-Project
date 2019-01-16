@@ -163,15 +163,15 @@
 }
 
 #logo_h1 {
-    position: sticky;
+    /* position: sticky; */
     font-family: 'Luckiest Guy', cursive;
-    font-size: 50pt;
+    font-size: 52pt;
     margin-bottom: -214px;
     z-index: 1;
 }
 
 #bomb_gif {
-    width: 170px;
+    width: 160px;
     /* margin-bottom: 20px; */
 }
 
