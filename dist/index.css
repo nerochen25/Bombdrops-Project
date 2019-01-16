@@ -174,7 +174,33 @@
     width: 100%;
     height: auto;
     padding: 1%;
-    margin-bottom: 500px;
+    margin-bottom: 70px;
     font-family: 'Coiny', cursive;
     font-family: 'Luckiest Guy', cursive;
+}
+
+#my_score {
+    font-size: 30pt;
+    color: #426789;
+}
+
+#your_score {
+    margin-left: -31px;
+    font-size: 40pt;
+}
+
+#top_10_scores {
+    margin-left: -58px;
+    font-size: 30pt;
+}
+
+#score_list {
+    margin-left: 17px;
+    font-size: 20pt;
+    color: #f9fbff;
+    list-style: decimal-leading-zero;
+}
+
+li {
+    padding-top: 10px;
 }

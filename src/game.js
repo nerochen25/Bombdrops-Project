@@ -6,7 +6,6 @@ var canvas = document.getElementById("bombdropsAnimation");
   canvas.height = 1200; 
   
 var speedMeteor = document.getElementById('speed_meteor');
-// speedMeteor.innerHTML = 'SPEED: 1';
 
 var playerScore = document.getElementById('player_score');
 playerScore.innerHTML = 'SCORE: 0'
@@ -20,9 +19,9 @@ var gameOverDiv = document.getElementById('game_over_div');
 let body = document.getElementById('body');
 
 let playerNameInput = document.getElementById('player_name_input');
-let player = new Player ({
-    name: playerNameInput.value
-  })
+let myScore = document.getElementById('my_score');
+// let scoreList = documnet.getElementById('score_list');
+
 
 
 
@@ -32,7 +31,7 @@ class Game {
         this.totalMissed = 0;
         this.speed = 1;
         this.totalBombs = 0;
-        this.playerName = player.name; 
+        this.playerName = null; 
         this.playerScore = 0;
         this.missed = 0;
         this.userSolution = '';
@@ -41,10 +40,17 @@ class Game {
         this.highestScore = parseInt(localStorage.getItem("highScore"));
         this.ctx = canvas.getContext("2d");
         this.gameLoop();  
+        this.avoidTwice = false;
     }
 
 
     gameLoop() {
+        if (this.playerName === null) {
+            let player = new Player ({
+                  name: playerNameInput.value
+                })
+            this.playerName = player.name;
+        }
         if (this.gameOver === false) {
             if (this.bombs.length != 2) {
                 this.addBombs();
@@ -55,13 +61,33 @@ class Game {
             missedBombs.innerHTML = `Missed ${Math.round(this.totalMissed * this.speed)}`; //still a bit off
             this.endGame(Math.round(this.totalMissed) * this.speed);
             requestAnimationFrame(this.gameLoop.bind(this)); 
-        } else {
+        } else if (this.gameOver === true) {
+            window.localStorage.setItem(this.playerName, this.playerScore)
             canvas.style.display = "none";
             body.style.backgroundColor = "white";
             beginGame.style.display = "none";
             gameDataDiv.style.display = "none";
             gameOverDiv.style.display = "block";
-            // gameOverDiv.innerText = `${this.playerName}: ${this.playerScore}`
+            myScore.innerHTML = `${this.playerName}:   ${this.playerScore}`;
+            
+            if (this.avoidTwice === false ) {
+                let names = Object.keys(window.localStorage);
+                let scores = Object.values(window.localStorage);
+                this.avoidTwice = true;
+                for (let i = 0; i < 10; i++) {
+                    if (names[i] === undefined) {
+                        names[i] = '';
+                    }
+                    if (scores[i] === undefined) {
+                        scores[i] = '';
+                    }
+                    
+                    var scoreOrderList = document.getElementById("score_list");
+                    var li = document.createElement("li");
+                    li.appendChild(document.createTextNode(`${names[i]}:      ${scores[i]}`));
+                    scoreOrderList.appendChild(li);   
+                } 
+            }
         }
     }
 

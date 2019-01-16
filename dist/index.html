@@ -23,9 +23,6 @@
                 <input id='player_name_input' type="text" placeholder="Enter Name">
                 <br/>
                 <button id='start_game_btn'>Start Game</button>
-                <!-- <p style="color:aliceblue; margin-left: 20px;">
-                    1. Every bomb counts 1,000 points
-                </p> -->
                 <h3 style="color:aliceblue; margin-left: -30px;">Copyright Ⓒ 2019 BombDrops by Nero Chen</h3>
 
             </div>
@@ -45,7 +42,13 @@
             <h2 id='player_score'></h2>
             <h2 id='missed_bomb'></h2>
         </div>
-        <div id="game_over_div" style="display: none;"></div>
+        <div id="game_over_div" style="display: none;">
+            <h1 id= "your_score">Your Score</h1>
+            <h2 id="my_score"></h2>
+            <br />
+            <h1 id="top_10_scores">Top 10 Score Board</h1>
+            <ol id='score_list'></ol>
+        </div>
 
         <canvas id='bombdropsAnimation'><button id='start_game_btn'>Start Game</button></canvas>
     
