@@ -8,22 +8,29 @@ var canvas = document.getElementById("bombdropsAnimation");
 var speedMeteor = document.getElementById('speed_meteor');
 // speedMeteor.innerHTML = 'SPEED: 1';
 
-var missedBomb = document.getElementById('missed_bomb');
-
 var playerScore = document.getElementById('player_score');
 playerScore.innerHTML = 'SCORE: 0'
 
 var missedBombs = document.getElementById('missed_bomb')
 missedBombs.innerHTML = 'Missed: 0';
 
-var playerName = document.getElementById('player_name');
+var beginGame = document.getElementById('game_begin');
+var gameDataDiv = document.getElementById('game_data_div');
+var gameOverDiv = document.getElementById('game_over_div');
+let playerNameInput = document.getElementById('player_name_input');
+let player = new Player ({
+    name: playerNameInput.value
+  })
+
+
+
 
 class Game {
     constructor(options) {
         this.totalMissed = 0;
         this.speed = 1;
         this.totalBombs = 0;
-        this.playerName = ''; 
+        this.playerName = player.name; 
         this.playerScore = 0;
         this.missed = 0;
         this.userSolution = '';
@@ -43,15 +50,14 @@ class Game {
             this.draw(this.context)
             this.removeBomb();
             this.countMissedBomb();
-            missedBombs.innerHTML = `Missed ${Math.round(this.totalMissed * this.speed)}`;
+            missedBombs.innerHTML = `Missed ${Math.round(this.totalMissed * this.speed)}`; //still a bit off
             this.endGame(Math.round(this.totalMissed) * this.speed);
             requestAnimationFrame(this.gameLoop.bind(this)); 
         } else {
-            alert("Game over")
-            var beginGame = document.getElementById('game_begin');
             beginGame.style.display = "none";
-            var gameDataDiv = document.getElementById('game_data_div');
             gameDataDiv.style.display = "none";
+            gameOverDiv.style.display = "block";
+            gameOverDiv.innerText = `${this.playerName}: ${this.playerScore}`
         }
     }
 

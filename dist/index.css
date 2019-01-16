@@ -166,3 +166,15 @@ body {
     margin-left: 95px;
     margin-bottom: 20px;
 }
+
+#game_over_div {
+    position: fixed;
+    bottom: 0px;
+    left: 37%;
+    width: 100%;
+    height: auto;
+    padding: 1%;
+    margin-bottom: 70px;
+    font-family: 'Coiny', cursive;
+    font-family: 'Luckiest Guy', cursive;
+}
