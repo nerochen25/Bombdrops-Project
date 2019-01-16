@@ -1,8 +1,8 @@
-body {
+#body {
     background-image: url('https://i.imgur.com/4jf04HT.gif?noredirect');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center; 
+    /* background-position: center center;  */
     font-family: 'Coiny', cursive; 
     font-family: 'Luckiest Guy', cursive;
 
@@ -174,7 +174,7 @@ body {
     width: 100%;
     height: auto;
     padding: 1%;
-    margin-bottom: 70px;
+    margin-bottom: 500px;
     font-family: 'Coiny', cursive;
     font-family: 'Luckiest Guy', cursive;
 }

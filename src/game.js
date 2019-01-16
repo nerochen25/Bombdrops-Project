@@ -17,6 +17,8 @@ missedBombs.innerHTML = 'Missed: 0';
 var beginGame = document.getElementById('game_begin');
 var gameDataDiv = document.getElementById('game_data_div');
 var gameOverDiv = document.getElementById('game_over_div');
+let body = document.getElementById('body');
+
 let playerNameInput = document.getElementById('player_name_input');
 let player = new Player ({
     name: playerNameInput.value
@@ -54,10 +56,12 @@ class Game {
             this.endGame(Math.round(this.totalMissed) * this.speed);
             requestAnimationFrame(this.gameLoop.bind(this)); 
         } else {
+            canvas.style.display = "none";
+            body.style.backgroundColor = "white";
             beginGame.style.display = "none";
             gameDataDiv.style.display = "none";
             gameOverDiv.style.display = "block";
-            gameOverDiv.innerText = `${this.playerName}: ${this.playerScore}`
+            // gameOverDiv.innerText = `${this.playerName}: ${this.playerScore}`
         }
     }
 

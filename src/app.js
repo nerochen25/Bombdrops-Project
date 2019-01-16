@@ -18,6 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let playerNameInput = document.getElementById('player_name_input');
 
   let playerScore = document.getElementById('player_score');
+  var gameOverDiv = document.getElementById('game_over_div');
+  let body = document.getElementById('body');
+
 
   startGameBtn.addEventListener('click', function() {
     let player = new Player ({
@@ -25,10 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
       score: playerScore.innerHTML
     })
     console.log(player)
+    gameOverDiv.innerHTML = `${player.name} ${player.score}`
     let game = new Game(ctx)
     game.gameLoop();
     
-
+    // body.style.
     gameBegin.style.display = "block";
     beforeGame.style.display = "none";
     gameDataDiv.style.display = "block";
