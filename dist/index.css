@@ -243,8 +243,7 @@ li {
     margin-bottom: 50px;
     font-family: 'Fredoka One', cursive;
     background-color: #04040482;
-    font-size: 14pt;
-    /* text-align: left; */
+    font-size: 13pt;
     border-radius: 10px;
     padding-bottom: 10px;
 }
@@ -259,8 +258,8 @@ li {
     color: #3d7f91;
     font-size: 25pt;
     font-family: 'Libre Barcode 128 Text', cursive;
-    margin-top: -15px;
-    margin-bottom: -8px;
+    margin-top: 0px;
+    margin-bottom: -30px;
 }
 
 #score_board {
@@ -282,6 +281,16 @@ li {
     flex-direction: row;
     justify-content: space-between;
     width: 150px;
-    padding-top: 19px;
-    margin-bottom: -50px;
+    /* padding-top: 19px; */
+    /* margin-bottom: -10px; */
+  }
+  
+
+  #copy_right_on_board_page {
+    color: #3d7f91;
+    font-size: 25pt;
+    font-family: 'Libre Barcode 128 Text', cursive;
+    margin-top: 0px;
+    margin-bottom: -30px;
+    
   }

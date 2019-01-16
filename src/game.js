@@ -61,7 +61,7 @@ class Game {
             this.endGame(Math.round(this.totalMissed) * this.speed);
             requestAnimationFrame(this.gameLoop.bind(this)); 
         } else if (this.gameOver === true) {
-            myStorage.setItem(this.playerName, this.playerScore)
+            myStorage.setItem(this.playerName, JSON.stringify(this.playerScore))
             canvas.style.display = "none";
             body.style.backgroundColor = "white";
             beginGame.style.display = "none";
