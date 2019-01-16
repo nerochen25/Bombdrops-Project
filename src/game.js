@@ -1,5 +1,6 @@
 import Bomb from "./bomb";
 import Player from './player';
+import sortedScoreBoard from './sorted_score_board';
 
 var canvas = document.getElementById("bombdropsAnimation");
   canvas.width = 1400;
@@ -71,9 +72,11 @@ class Game {
             myScore.innerHTML = `${this.playerName}:   ${this.playerScore}`;
             
             if (this.avoidTwice === false ) {
-                let names = Object.keys(window.localStorage);
-                let scores = Object.values(window.localStorage);
                 this.avoidTwice = true;
+                let sortedLocalStorage = sortedScoreBoard(window.localStorage).reverse();
+                let names = Object.keys(sortedLocalStorage);
+                let scores = Object.values(sortedLocalStorage);
+                
                 for (let i = 0; i < 10; i++) {
                     if (names[i] === undefined) {
                         names[i] = '';
@@ -81,10 +84,10 @@ class Game {
                     if (scores[i] === undefined) {
                         scores[i] = '';
                     }
-                    
+
                     var scoreOrderList = document.getElementById("score_list");
                     var li = document.createElement("li");
-                    li.appendChild(document.createTextNode(`${names[i]}:      ${scores[i]}`));
+                    li.appendChild(document.createTextNode(`${names[i]}${'     '}${scores[i]}`));
                     scoreOrderList.appendChild(li);   
                 } 
             }
