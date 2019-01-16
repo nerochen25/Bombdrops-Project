@@ -17,7 +17,7 @@ function increaseSpeed() {
 }
 
 function reduceSpeed() {
-    if (speed > 0.25) {
+    if (speed > 0.5) {
         speedMeteor.innerHTML = `🚀 SPEED: ${speed}`
         return speed -= 0.25;
     }
