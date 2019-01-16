@@ -7,7 +7,7 @@ bombImage.src = './image_resource/bomb_sprite_sheet.png';
 var explosionImage = new Image();
 explosionImage.src = './image_resource/Bombdrops.png';
 
-var speed = 1;
+var speed = 1.5;
 
 function increaseSpeed() {
     if (speed < 3) {
@@ -34,7 +34,7 @@ speedMeteor.innerHTML = `SPEED: ${speed}`;
 
 class Bomb {
     constructor(options) {
-        this.speed = 1;
+        this.speed = 1.5;
         this.missed = 0;
         this.frameIndex = 0;
         this.tickCount = 0;

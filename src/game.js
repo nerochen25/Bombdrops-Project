@@ -28,7 +28,7 @@ let myScore = document.getElementById('my_score');
 class Game {
     constructor(options) {
         this.totalMissed = 0;
-        this.speed = 1;
+        this.speed = 1.5;
         this.totalBombs = 0;
         this.playerName = null; 
         this.playerScore = 0;
