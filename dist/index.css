@@ -172,7 +172,7 @@
 
 #bomb_gif {
     width: 170px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 #game_over_div {
