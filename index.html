@@ -8,6 +8,9 @@
         <link rel="stylesheet" type="text/css" media="screen" href="./dist/index.css" />
         <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
 
 
     </head>
@@ -23,7 +26,13 @@
                 <input id='player_name_input' type="text" placeholder="Enter Name">
                 <br/>
                 <button id='start_game_btn'>Start Game</button>
-                <h3 style="color:aliceblue; margin-left: -30px;">Copyright Ⓒ 2019 BombDrops by Nero Chen</h3>
+                <ul id="instruction_list">
+                    <li>☛ Every bomb worths 1,000 points after game starts</li>
+                    <li>☛ Increasing speed gives you more points (speed x 1,000 pts) for every bomb</li>
+                    <li>☛ Intuitively, the slow-down button gives you less points but more flexibility</li>
+                    <li>☛ Allow to miss 4 bombs but with speed 2 or higher allows more missing bombs</li>
+                </ul>
+                <h3 id="copy_right">Copyright Ⓒ 2019 BombDrops by Nero Chen</h3>
 
             </div>
             <br/>

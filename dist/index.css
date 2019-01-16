@@ -35,12 +35,12 @@
     color: #23274B;
     border-radius: 7px;
     background-color: #ffffff8f;
-    width: 34%;
+    width: 48%;
     text-align: center;
 }
 
 #increase_speed_btn {
-    width: 15%;
+    width: 22%;
     background-color: #177b8dd4;
     box-sizing: inherit;
     color: #FFFFFF !important;
@@ -59,11 +59,14 @@
     text-decoration: none;
     font-family: 'Coiny', cursive;
     font-family: 'Luckiest Guy', cursive;
-
-
 }
+
+#increase_speed_btn:hover {
+    background-color: #23274B;
+}
+
 #reduce_speed_btn {
-    width: 15%;
+    width: 22%;
     background-color: #177b8dd4;
     box-sizing: inherit;
     color: #FFFFFF !important;
@@ -82,8 +85,10 @@
     text-decoration: none;
     font-family: 'Coiny', cursive;
     font-family: 'Luckiest Guy', cursive;
+}
 
-
+#reduce_speed_btn:hover {
+    background-color: #23274B;
 }
 
 #speed_meteor {
@@ -117,7 +122,7 @@
 
 
 #start_game_btn {
-    width: 19.5%;
+    width: 50%;
     background-color: #177b8dd4;
     box-sizing: inherit;
     color: #FFFFFF !important;
@@ -136,7 +141,11 @@
     text-decoration: none;
     font-family: 'Coiny', cursive;
     font-family: 'Luckiest Guy', cursive;
-    /* margin-bottom: 140px; */
+    margin-bottom: 20px;
+}
+
+#start_game_btn:hover {
+    background-color: #23274B;
 }
 
 
@@ -146,7 +155,7 @@
     color: #23274B;
     border-radius: 7px;
     background-color: #ffffff8f;
-    width: 30%;
+    width: 50%;
     text-align: center;
     font-family: 'Coiny', cursive;
     margin-top:30px;
@@ -218,4 +227,29 @@ li {
 
 #game_data_div {
     padding-left: 30px;
+}
+
+#instruction_list {
+    color: white;
+    margin-bottom: 50px;
+    font-family: 'Fredoka One', cursive;
+    background-color: #04040482;
+    font-size: 14pt;
+    /* text-align: left; */
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
+
+#instruction_list li {
+    /* padding-top: 10px; */
+    list-style: none;
+
+}
+
+#copy_right {
+    color: #3d7f91;
+    font-size: 25pt;
+    font-family: 'Libre Barcode 128 Text', cursive;
+    margin-top: -15px;
+    margin-bottom: -8px;
 }
