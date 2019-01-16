@@ -76,16 +76,18 @@ class Game {
                 let scores = Object.values(sortedLocalStorage);
                 
                 for (let i = 0; i < 10; i++) {
-                    if (names[i] === undefined) {
-                        names[i] = '';
+                    if (scores[i][0] === undefined) {
+                        scores[i][0] = 'N/A';
                     }
-                    if (scores[i] === undefined) {
-                        scores[i] = '';
+                    if (scores[i][1] === undefined) {
+                        scores[i][1] = 'N/A';
                     }
 
                     var scoreOrderList = document.getElementById("score_list");
                     var li = document.createElement("li");
-                    li.appendChild(document.createTextNode(`${names[i]}${'     '}${scores[i]}`));
+                    li.setAttribute('id', 'score_list_item')
+                    li.appendChild(document.createTextNode(`💥 ${scores[i][0]}: ${scores[i][1]}`));
+                    console.log(scores[i])
                     scoreOrderList.appendChild(li);   
                 } 
             }
