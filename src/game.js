@@ -9,7 +9,7 @@ var canvas = document.getElementById("bombdropsAnimation");
 var speedMeteor = document.getElementById('speed_meteor');
 
 var playerScore = document.getElementById('player_score');
-playerScore.innerHTML = 'SCORE: 0'
+playerScore.innerHTML = '👑 SCORE: 0'
 
 var missedBombs = document.getElementById('missed_bomb')
 missedBombs.innerHTML = 'Missed: 0';
@@ -55,7 +55,7 @@ class Game {
             this.draw(this.context)
             this.removeBomb();
             this.countMissedBomb();
-            missedBombs.innerHTML = `Missed ${Math.round(this.totalMissed * this.speed)}`; //still a bit off
+            missedBombs.innerHTML = `💣 Missed: ${Math.round(this.totalMissed * this.speed)}`; //still a bit off
             this.endGame(Math.round(this.totalMissed) * this.speed);
             requestAnimationFrame(this.gameLoop.bind(this)); 
         } else if (this.gameOver === true) {
@@ -114,7 +114,7 @@ class Game {
             bomb.update();
             bomb.render();
             this.speed = bomb.speed;
-            speedMeteor.innerHTML = `SPEED: ${this.speed}`;
+            speedMeteor.innerHTML = `🚀 SPEED: ${this.speed}`;
         });
         
     }
@@ -137,7 +137,7 @@ class Game {
                         bomb.context.font = "100px, Arial"
                         bomb.context.fillText('💥💥💥💥', bomb.moveRight + 60, bomb.moveDown + 120);
                         this.playerScore += 1000 * this.speed;
-                        playerScore.innerHTML = `SCORE: ${this.playerScore}`
+                        playerScore.innerHTML = `👑 SCORE: ${this.playerScore}`
                         this.bombs.splice(idx,1)
                         // setInterval(() => { this.bombs.splice(idx,1)
                         // }, 100);
