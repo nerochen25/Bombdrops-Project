@@ -195,7 +195,7 @@
 
 #top_10_scores {
     font-size: 30pt;
-    padding-top: 22px;
+    padding-top: 37px;
     color: white;
 }
 
@@ -207,7 +207,7 @@
 li {
     padding-top: 10px;
     list-style: none;
-    color: #426789;
+    color: #f7b45a;
 }
 
 #before_game {
