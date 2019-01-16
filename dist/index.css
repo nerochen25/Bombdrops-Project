@@ -202,6 +202,10 @@
 #score_list {
     font-size: 20pt;
     color: #f9fbff;
+    text-align: left;
+    align-content: center;
+    align-items: center;
+    padding-left: 300px;
 }
 
 li {

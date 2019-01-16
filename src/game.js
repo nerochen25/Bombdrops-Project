@@ -76,7 +76,7 @@ class Game {
                 let scores = Object.values(sortedLocalStorage);
                 
                 for (let i = 0; i < 10; i++) {
-                    if (scores[i][0] === undefined) {
+                    if (scores[i][0] === '') {
                         scores[i][0] = 'N/A';
                     }
                     if (scores[i][1] === undefined) {
@@ -86,7 +86,7 @@ class Game {
                     var scoreOrderList = document.getElementById("score_list");
                     var li = document.createElement("li");
                     li.setAttribute('id', 'score_list_item')
-                    li.appendChild(document.createTextNode(`💥 ${scores[i][0]}: ${scores[i][1]}`));
+                    li.appendChild(document.createTextNode(`💥${i+1}💥 ${scores[i][0]}:${'    '}${scores[i][1]}`));
                     console.log(scores[i])
                     scoreOrderList.appendChild(li);   
                 } 
