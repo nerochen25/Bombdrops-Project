@@ -1,5 +1,7 @@
 ## Overview
 
+Live Link: http://www.bombdrops.fun/
+
 Bombdrops is a simple and educational game that trains your arithmetic skills by solving math problems before the bombs hit the city (ground). As the game begins and player enters a username, bombs will start falling from the sky and the player will have to solve the math problem on each falling bomb before it destroys the city. As the third falling bomb hits the city, the city will be entirely vanished, which also means it is game over for the player.  
 
 Speaking of the falling speed of the bombs, the falling speed will increase by 0.25 second as player gains every 1,000 points (each bomb counts 100 points). There will also be a golden bomb with a harder math problem that can explode all other falling bombs in the sky at the same time. This golden bomb will appear every 20 seconds/1,500 points. As game ends, the interface will display a score board with player's performance info and a ranking board with the scores of the top 10 players. 
