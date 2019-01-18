@@ -1,5 +1,5 @@
 #body {
-    background-image: url('https://i.imgur.com/4jf04HT.gif?noredirect');
+    background-image: url('../image_resource/background.gif');
     background-size: cover;
     background-repeat: no-repeat;
     /* background-position: center center;  */
