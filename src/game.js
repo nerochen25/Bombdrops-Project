@@ -2,6 +2,9 @@ import Bomb from "./bomb";
 import Player from './player';
 import sortedScoreBoard from './sorted_score_board';
 
+var bombImage = new Image();
+bombImage.src = './image_resource/bomb_sprite_sheet.png';
+
 let myStorage = window.localStorage;
 
 var canvas = document.getElementById("bombdropsAnimation");
@@ -103,6 +106,7 @@ class Game {
     addBombs() {
         
         this.bombs.push(new Bomb({
+            // image: bombImage,
             context: this.ctx,
             width: 1704,    //width of the photo
             height: 1200,   //height here doesnt matter

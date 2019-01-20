@@ -45,7 +45,7 @@ class Bomb {
         this.context = options.context;
         this.width = options.width;
         this.height = options.height;
-        this.image = bombImage;
+        // this.image = bombImage;
         this.explosionImage = explosionImage;
         this.mathProblem = String(mathProblemGenerator(1,20));
         this.mathSolution = mathProblemSolver(this.mathProblem)
@@ -80,7 +80,7 @@ class Bomb {
 
     render() {
         this.context.drawImage(
-            this.image, //image
+            bombImage, //image
             this.frameIndex * this.width / this.numberOfFrames, //sx
             0, //sy, bomb shifts up and gets cut
             this.width / this.numberOfFrames, //sWidth
