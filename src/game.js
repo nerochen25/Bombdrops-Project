@@ -87,10 +87,10 @@ class Game {
                 
                 for (let i = 0; i < 10; i++) {
                     if (scores[i][0] === '') {
-                        scores[i][0] = 'N/A';
+                        scores[i][0] = 'Anonymous';
                     }
                     if (scores[i][1] === undefined) {
-                        scores[i][1] = 'N/A';
+                        scores[i][1] = 'Anonymous';
                     }
 
                     var scoreOrderList = document.getElementById("score_list");
