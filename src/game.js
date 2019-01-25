@@ -165,14 +165,14 @@ class Game {
                 this.bombs.forEach ((bomb, idx) => {
                     if (parseInt(bomb.mathSolution) === parseInt(this.userSolution)) {
                         bomb.mathProblem = '';
+                        bomb.numberOfFrames = 11;
                         bomb.image = bomb.explosionImage;
                         bomb.context.font = "100px, Arial"
-                        // bomb.context.fillText('💥💥💥💥', bomb.moveRight + 60, bomb.moveDown + 120);
                         this.playerScore += 1000 * this.speed;
                         playerScore.innerHTML = `👑 SCORE: ${this.playerScore}`
                         // this.bombs.splice(idx,1)
                         setTimeout(() => { this.bombs.splice(idx,1)
-                        }, 100);
+                        }, 300);
                     }
                 }) 
             }
