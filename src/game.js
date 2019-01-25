@@ -43,6 +43,7 @@ class Game {
         this.ctx = canvas.getContext("2d");
         this.gameLoop();  
         this.avoidTwice = false;
+        this.i;
     }
 
 
@@ -62,7 +63,13 @@ class Game {
             this.countMissedBomb();
             missedBombs.innerHTML = `💣 Missed: ${Math.round(this.totalMissed * this.speed)}`; //still a bit off
             this.endGame(Math.round(this.totalMissed) * this.speed);
-            requestAnimationFrame(this.gameLoop.bind(this)); 
+            window.requestAnimationFrame(this.gameLoop.bind(this)); 
+
+            for (this.i = 0; this.i < this.bombs.length; this.i += 1) {
+                // this.bombs[this.i].update();
+                this.bombs[this.i].render();
+            }
+
         } else if (this.gameOver === true) {
             myStorage.setItem(this.playerName, JSON.stringify(this.playerScore))
             canvas.style.display = "none";
@@ -113,6 +120,7 @@ class Game {
             numberOfFrames: 8, //num of frames of the photo
             moveDown: 0,
             speed: 1,
+            ticksPerFrame: this.i
         }));      
     }
 
@@ -131,23 +139,40 @@ class Game {
     }
 
     removeBomb() {
+        
         let userSolutionInput = document.getElementById('solution_input');
         userSolutionInput.addEventListener('keypress', (e) => {
             var key = e.which || e.keyCode;
             if (key === 13) {
                 this.userSolution = document.getElementById('solution_input').value;
-                document.getElementById('solution_input').value = ''
+                document.getElementById('solution_input').value = '';
+
+                // var i;
+		
+                // // for (i = 0; i < this.bombs.length; i += 1) {
+                // //     if (parseInt(this.bombs[i].mathSolution) === parseInt(this.userSolution)) {
+                // //         // this.bombs[i].image = this.bombs[i].explosionImage;
+                // //         this.bombs[i].context.font = "100px, Arial"
+                // //         this.bombs[i].context.fillText('💥💥💥💥', this.bombs[i].moveRight + 60, this.bombs[i].moveDown + 120);
+                // //         this.playerScore += 1000 * this.speed;
+                // //         playerScore.innerHTML = `👑 SCORE: ${this.playerScore}`
+                // //         this.bombs.splice(i,1)
+                // //         // setInterval(() => { this.bombs.splice(idx,1)
+                // //         // }, 100);
+                // //     }
+                // // }
                 
                 this.bombs.forEach ((bomb, idx) => {
                     if (parseInt(bomb.mathSolution) === parseInt(this.userSolution)) {
+                        bomb.mathProblem = '';
                         bomb.image = bomb.explosionImage;
                         bomb.context.font = "100px, Arial"
-                        bomb.context.fillText('💥💥💥💥', bomb.moveRight + 60, bomb.moveDown + 120);
+                        // bomb.context.fillText('💥💥💥💥', bomb.moveRight + 60, bomb.moveDown + 120);
                         this.playerScore += 1000 * this.speed;
                         playerScore.innerHTML = `👑 SCORE: ${this.playerScore}`
-                        this.bombs.splice(idx,1)
-                        // setInterval(() => { this.bombs.splice(idx,1)
-                        // }, 100);
+                        // this.bombs.splice(idx,1)
+                        setTimeout(() => { this.bombs.splice(idx,1)
+                        }, 100);
                     }
                 }) 
             }
