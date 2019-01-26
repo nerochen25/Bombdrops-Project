@@ -173,7 +173,7 @@ class Game {
                         // this.bombs.splice(idx,1)
                         setTimeout(() => { this.bombs.splice(idx,1)
                         }, 300);
-                        bomb.image = bombImage;
+                        bomb.image = bomb.explosionImage; //here to fix
 
                     }
                 }) 
