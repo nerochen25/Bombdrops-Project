@@ -256,8 +256,8 @@ li {
 
 #copy_right {
     color: #3d7f91;
-    font-size: 25pt;
-    font-family: 'Libre Barcode 128 Text', cursive;
+    font-size: 13pt;
+    /* font-family: 'Libre Barcode 128 Text', cursive; */
     margin-top: 0px;
     margin-bottom: -30px;
 }
@@ -288,9 +288,38 @@ li {
 
   #copy_right_on_board_page {
     color: #3d7f91;
-    font-size: 25pt;
-    font-family: 'Libre Barcode 128 Text', cursive;
+    font-size: 13pt;
+    /* font-family: 'Libre Barcode 128 Text', cursive; */
     margin-top: 0px;
     margin-bottom: -30px;
     
   }
+
+  
+#restart_game_btn {
+    width: 50%;
+    background-color: #177b8dd4;
+    box-sizing: inherit;
+    color: #FFFFFF !important;
+    height: 4rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    padding: -7px 43px;
+    border: none;
+    position: relative;
+    -webkit-appearance: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 350;
+    transition: all 0.25s ease-in-out !important;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Coiny', cursive;
+    font-family: 'Luckiest Guy', cursive;
+    margin-bottom: 100px;
+    margin-top: 100px;
+}
+
+#restart_game_btn:hover {
+    background-color: #23274B;
+}

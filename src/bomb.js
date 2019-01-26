@@ -10,7 +10,7 @@ explosionImage.src = './image_resource/Bombdrops.png';
 var speed = 1.5;
 
 function increaseSpeed() {
-    if (speed < 3) {
+    if (speed < 4) {
         speedMeteor.innerHTML = `🚀 SPEED: ${speed}`
         return speed += 0.25; 
     }
