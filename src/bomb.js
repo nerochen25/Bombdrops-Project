@@ -32,6 +32,9 @@ reducerSpeedBtn.addEventListener('click', reduceSpeed)
 var speedMeteor = document.getElementById('speed_meteor');
 speedMeteor.innerHTML = `SPEED: ${speed}`;
 
+
+let missedBombs = 0;
+
 class Bomb {
     constructor(options) {
         this.speed = 1.5;
@@ -66,6 +69,8 @@ class Bomb {
 
                 if (this.moveDown >= 1500) {  
                     this.missed += 1;
+                    missedBombs += 1;
+                    console.log(missedBombs);
                     this.moveDown = this.speed;
                     this.moveRight = Math.random() * 1000 // randmize each bomb's falling position
                     this.mathProblem = String(mathProblemGenerator(1,20));
