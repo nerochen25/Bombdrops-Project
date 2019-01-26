@@ -102,6 +102,12 @@
     text-shadow: 2px 2px grey;
 }
 
+#total_life {
+    color: #eb3569;
+    font-size:250%;
+    text-shadow: 2px 2px grey;
+}
+
 #bombdropsAnimation {
     margin-top: -600px;  
 }

@@ -109,7 +109,9 @@ class Game {
         }
     }
 
+
     addBombs() {
+        
         this.bombs.push(new Bomb({
             image: bombImage,
             context: this.ctx,
@@ -145,7 +147,23 @@ class Game {
             if (key === 13) {
                 this.userSolution = document.getElementById('solution_input').value;
                 document.getElementById('solution_input').value = '';
-                           
+
+                // var i;
+		
+                // // for (i = 0; i < this.bombs.length; i += 1) {
+                // //     if (parseInt(this.bombs[i].mathSolution) === parseInt(this.userSolution)) {
+                // //         // this.bombs[i].image = this.bombs[i].explosionImage;
+                // //         this.bombs[i].context.font = "100px, Arial"
+                // //         this.bombs[i].context.fillText('💥💥💥💥', this.bombs[i].moveRight + 60, this.bombs[i].moveDown + 120);
+                // //         this.playerScore += 1000 * this.speed;
+                // //         playerScore.innerHTML = `👑 SCORE: ${this.playerScore}`
+                // //         this.bombs.splice(i,1)
+                // //         // setInterval(() => { this.bombs.splice(idx,1)
+                // //         // }, 100);
+                // //     }
+                // // }
+                
+                
                 this.bombs.forEach ((bomb, idx) => {
                     if (parseInt(bomb.mathSolution) === parseInt(this.userSolution) && killed === true) {
                         killed = false;
