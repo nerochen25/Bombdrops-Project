@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   startGameBtn.addEventListener('click', function() {
     let game = new Game(ctx)
-    game.gameLoop();
+    window.setTimeout(game.gameLoop, 20000);
     
     gameBegin.style.display = "block";
     beforeGame.style.display = "none";

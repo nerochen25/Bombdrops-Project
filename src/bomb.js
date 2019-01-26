@@ -62,6 +62,8 @@ class Bomb {
                 this.frameIndex += 1; //frequency of frames                
                 this.moveDown += speed; //speed of falling   
                 this.speed = speed
+                this.context.clearRect(0,0, this.width, this.height);
+
                 if (this.moveDown >= 1500) {  
                     this.missed += 1;
                     this.moveDown = this.speed;

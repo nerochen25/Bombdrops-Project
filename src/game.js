@@ -55,7 +55,7 @@ class Game {
             this.playerName = player.name;
         }
         if (this.gameOver === false) {
-            if (this.bombs.length != 2) {
+            if (this.bombs.length != 4) {
                 this.addBombs();
             }
             this.draw(this.context)
@@ -113,7 +113,7 @@ class Game {
     addBombs() {
         
         this.bombs.push(new Bomb({
-            // image: bombImage,
+            image: bombImage,
             context: this.ctx,
             width: 1704,    //width of the photo
             height: 1200,   //height here doesnt matter
@@ -173,6 +173,8 @@ class Game {
                         // this.bombs.splice(idx,1)
                         setTimeout(() => { this.bombs.splice(idx,1)
                         }, 300);
+                        bomb.image = bombImage;
+
                     }
                 }) 
             }
