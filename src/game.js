@@ -166,6 +166,7 @@ class Game {
                 
                 this.bombs.forEach ((bomb, idx) => {
                     if (parseInt(bomb.mathSolution) === parseInt(this.userSolution) && killed === true) {
+                        killed = false;
                         bomb.mathProblem = '';
                         bomb.numberOfFrames = 11;
                         bomb.context.font = "100px, Arial"
