@@ -2,10 +2,8 @@
     background-image: url('../image_resource/background.gif');
     background-size: cover;
     background-repeat: no-repeat;
-    /* background-position: center center;  */
     font-family: 'Coiny', cursive; 
     font-family: 'Luckiest Guy', cursive;
-    /* width: 900px; */
     height:884px;
     overflow: hidden;
 }
@@ -19,14 +17,11 @@
 #player_name_div {
     position: fixed;
     bottom: 0px;
-    /* left: 37%; */
     width: 100%;
     height: auto;
-    /* padding: 1%; */
     margin-bottom: 70px;
     font-family: 'Coiny', cursive;
     font-family: 'Luckiest Guy', cursive;
-
 }
 
 #solution_input {
@@ -95,7 +90,6 @@
     color: #177b8dd4;
     font-size:250%;
     text-shadow: 2px 2px grey;
-
 }
 
 #falling_position {
@@ -106,12 +100,10 @@
     color: #eb3569;
     font-size:250%;
     text-shadow: 2px 2px grey;
-
 }
 
 #bombdropsAnimation {
     margin-top: -600px;  
-
 }
 
 #player_score {
@@ -159,11 +151,9 @@
     text-align: center;
     font-family: 'Coiny', cursive;
     margin-top:30px;
-
 }
 
 #logo_h1 {
-    /* position: sticky; */
     font-family: 'Luckiest Guy', cursive;
     font-size: 52pt;
     margin-bottom: -214px;
@@ -172,7 +162,6 @@
 
 #bomb_gif {
     width: 160px;
-    /* margin-bottom: 20px; */
 }
 
 #game_over_div {
@@ -231,7 +220,6 @@ li {
     align-content: center;
     align-items: center;
     text-align: center;
-
 }
 
 #game_data_div {
@@ -252,15 +240,12 @@ li {
 }
 
 #instruction_list li {
-    /* padding-top: 10px; */
     list-style: none;
-
 }
 
 #copy_right {
     color: #3d7f91;
     font-size: 13pt;
-    /* font-family: 'Libre Barcode 128 Text', cursive; */
     margin-top: 0px;
     margin-bottom: -30px;
 }
@@ -273,29 +258,25 @@ li {
 
 #github-logo {
     width: 60px;
-  }
+}
   
-  #linkedin-logo {
+#linkedin-logo {
     width: 60px;
-  };
+};
   
-  #github-linkedin {
+#github-linkedin {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 150px;
-    /* padding-top: 19px; */
-    /* margin-bottom: -10px; */
-  }
+}
   
 
   #copy_right_on_board_page {
     color: #3d7f91;
     font-size: 13pt;
-    /* font-family: 'Libre Barcode 128 Text', cursive; */
     margin-top: 0px;
     margin-bottom: -30px;
-    
   }
 
   

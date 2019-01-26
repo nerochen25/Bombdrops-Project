@@ -113,7 +113,7 @@ class Game {
     addBombs() {
         
         this.bombs.push(new Bomb({
-            // image: bombImage,
+            image: bombImage,
             context: this.ctx,
             width: 1704,    //width of the photo
             height: 1200,   //height here doesnt matter
