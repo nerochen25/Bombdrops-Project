@@ -55,7 +55,7 @@ class Game {
             this.playerName = player.name;
         }
         if (this.gameOver === false) {
-            if (this.bombs.length != 6) {
+            if (this.bombs.length != 4) {
                 this.addBombs();
             }
             this.draw(this.context)
