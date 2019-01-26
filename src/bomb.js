@@ -32,7 +32,6 @@ reducerSpeedBtn.addEventListener('click', reduceSpeed)
 var speedMeteor = document.getElementById('speed_meteor');
 speedMeteor.innerHTML = `SPEED: ${speed}`;
 
-
 class Bomb {
     constructor(options) {
         this.speed = 1.5;
