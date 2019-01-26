@@ -10,14 +10,14 @@ explosionImage.src = './image_resource/Bombdrops.png';
 var speed = 1.5;
 
 function increaseSpeed() {
-    if (speed < 4) {
+    if (speed < 3.5) {
         speedMeteor.innerHTML = `🚀 SPEED: ${speed}`
         return speed += 0.25; 
     }
 }
 
 function reduceSpeed() {
-    if (speed > 0.5) {
+    if (speed > 1) {
         speedMeteor.innerHTML = `🚀 SPEED: ${speed}`
         return speed -= 0.25;
     }

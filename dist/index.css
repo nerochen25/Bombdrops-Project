@@ -246,6 +246,9 @@ li {
     font-size: 13pt;
     border-radius: 10px;
     padding-bottom: 10px;
+    text-align: center;
+    width: 67%;
+    margin: 0 auto;
 }
 
 #instruction_list li {
