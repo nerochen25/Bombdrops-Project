@@ -55,7 +55,7 @@ class Game {
             this.playerName = player.name;
         }
         if (this.gameOver === false) {
-            if (this.bombs.length != 4) {
+            if (this.bombs.length != 6) {
                 this.addBombs();
             }
             this.draw(this.context)
@@ -113,7 +113,7 @@ class Game {
     addBombs() {
         
         this.bombs.push(new Bomb({
-            image: bombImage,
+            // image: bombImage,
             context: this.ctx,
             width: 1704,    //width of the photo
             height: 1200,   //height here doesnt matter
@@ -139,10 +139,11 @@ class Game {
     }
 
     removeBomb() {
-        
+        let killed;
         let userSolutionInput = document.getElementById('solution_input');
         userSolutionInput.addEventListener('keypress', (e) => {
             var key = e.which || e.keyCode;
+            killed = true;
             if (key === 13) {
                 this.userSolution = document.getElementById('solution_input').value;
                 document.getElementById('solution_input').value = '';
@@ -162,19 +163,20 @@ class Game {
                 // //     }
                 // // }
                 
+                
                 this.bombs.forEach ((bomb, idx) => {
-                    if (parseInt(bomb.mathSolution) === parseInt(this.userSolution)) {
+                    if (parseInt(bomb.mathSolution) === parseInt(this.userSolution) && killed === true) {
                         bomb.mathProblem = '';
                         bomb.numberOfFrames = 11;
-                        bomb.image = bomb.explosionImage;
                         bomb.context.font = "100px, Arial"
                         this.playerScore += 1000 * this.speed;
                         playerScore.innerHTML = `👑 SCORE: ${this.playerScore}`
                         // this.bombs.splice(idx,1)
+                        bomb.image = bomb.explosionImage;
+
                         setTimeout(() => { this.bombs.splice(idx,1)
                         }, 300);
-                        bomb.image = bomb.explosionImage; //here to fix
-
+                        killed = false;
                     }
                 }) 
             }
