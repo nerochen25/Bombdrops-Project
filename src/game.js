@@ -77,7 +77,7 @@ class Game {
             beginGame.style.display = "none";
             gameDataDiv.style.display = "none";
             gameOverDiv.style.display = "block";
-            myScore.innerHTML = `${this.playerName}:   ${this.playerScore}`;
+            myScore.innerHTML = `${this.playerName}   ${this.playerScore}`;
             
             if (this.avoidTwice === false ) {
                 this.avoidTwice = true;
