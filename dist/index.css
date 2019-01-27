@@ -311,3 +311,25 @@ li {
 #restart_game_btn:hover {
     background-color: #23274B;
 }
+
+#select_level {
+    width: 50%;
+    background-color: #11141e;
+    box-sizing: inherit;
+    color: #FFFFFF !important;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.2rem;
+    padding: -7px 43px;
+    border: none;
+    position: relative;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 350;
+    transition: all 0.25s ease-in-out !important;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Coiny', cursive;
+    font-family: 'Luckiest Guy', cursive;
+    margin-bottom: 20px;
+}

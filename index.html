@@ -26,7 +26,14 @@
                 <br/>
                 <input id='player_name_input' type="text" placeholder="Enter Name">
                 <br/>
-                <button id='start_game_btn'>Start Game</button>
+                <select id='select_level'>
+                    <option value="Default">Select a level</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Difficult">Difficult</option>
+                    <option value="Expert">Expert</option>
+                </select>
+                <button id='start_game_btn' style="display: none">Start Game</button>
                 <ul id="instruction_list">
                     <li>☛ Initial speed is 1.5 after game starts</li>
                     <li>☛ Formula for point system: (speed x 1,000 pts)</li>

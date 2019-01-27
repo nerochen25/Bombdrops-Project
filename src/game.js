@@ -27,6 +27,31 @@ let body = document.getElementById('body');
 let playerNameInput = document.getElementById('player_name_input');
 let myScore = document.getElementById('my_score');
 
+let startGameBtn = document.getElementById('start_game_btn');
+
+var numOfBombs = 5;
+
+let selectLevel = document.getElementById('select_level')
+selectLevel.addEventListener('change', () => {
+    if (selectLevel.value === "Easy") {
+        numOfBombs = 3;
+        startGameBtn.style.display = "inline-block";
+    } else if (selectLevel.value === "Normal") {
+        numOfBombs = 5;
+        startGameBtn.style.display = "inline-block";
+
+    } else if (selectLevel.value === "Difficult") {
+        numOfBombs = 7;
+        startGameBtn.style.display = "inline-block";
+    } else if (selectLevel.value === "Expert") {
+        numOfBombs = 10;
+        startGameBtn.style.display = "inline-block";
+    } else {
+        startGameBtn.style.display = "none";
+    }
+});
+
+
 
 class Game {
     constructor() {
@@ -55,7 +80,7 @@ class Game {
             this.playerName = player.name;
         }
         if (this.gameOver === false) {
-            if (this.bombs.length != 5) {
+            if (this.bombs.length != numOfBombs) {
                 this.addBombs();
             }
             this.draw(this.context)
