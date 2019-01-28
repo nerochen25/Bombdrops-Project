@@ -1,6 +1,6 @@
 #body {
     background-image: url('../image_resource/background.gif');
-    background-size: cover;
+    /* background-size: cover; */
     background-repeat: no-repeat;
     font-family: 'Coiny', cursive; 
     font-family: 'Luckiest Guy', cursive;
