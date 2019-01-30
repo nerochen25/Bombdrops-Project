@@ -142,7 +142,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nconst symbols = ['+', '-', '�
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nfunction mathProblemSolver(str) {\n    let mathElements = str.split(' ');\n    let int1 = parseInt(mathElements[0]);\n    let int2 = parseInt(mathElements[2]);\n    if (mathElements[1] === '+') {\n        return int1 + int2;\n    }\n\n    if (mathElements[1] === '-') {\n        return int1 - int2;\n    }\n\n    if (mathElements[1] === '𝐱') {\n        return int1 * int2;\n    }\n\n    if (mathElements[1] === '/') {\n        return parseInt(int1 / int2);\n    }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (mathProblemSolver);\n\n//# sourceURL=webpack:///./src/math_problem_solver.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nfunction mathProblemSolver(str) {\n    let mathElements = str.split(' ');\n    let int1 = parseInt(mathElements[0]);\n    let int2 = parseInt(mathElements[2]);\n    if (mathElements[1] === '+') {\n        return int1 + int2;\n    }\n\n    if (mathElements[1] === '-') {\n        return int1 - int2;\n    }\n\n    if (mathElements[1] === '𝐱') {\n        return int1 * int2;\n    }\n\n    if (mathElements[1] === '÷') {\n        return parseInt(int1 / int2);\n    }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (mathProblemSolver);\n\n//# sourceURL=webpack:///./src/math_problem_solver.js?");
 
 /***/ }),
 

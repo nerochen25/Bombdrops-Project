@@ -14,7 +14,7 @@ function mathProblemSolver(str) {
         return int1 * int2;
     }
 
-    if (mathElements[1] === '/') {
+    if (mathElements[1] === '÷') {
         return parseInt(int1 / int2);
     }
 }
