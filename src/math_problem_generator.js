@@ -1,4 +1,4 @@
-const symbols = ['+', '-', '*', '/']
+const symbols = ['+', '-', '𝐱', '/']
 
 function mathProblemGenerator(min , max) {
 
@@ -16,7 +16,7 @@ function mathProblemGenerator(min , max) {
         return `${int2} ${symbol} ${int1}`
     }
 
-    if (symbol === '*' && int1 > 10 && int2 > 10) {
+    if (symbol === '𝐱' && int1 > 10 && int2 > 10) {
         int1 = int1 - 10
     }
 
