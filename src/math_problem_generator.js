@@ -1,4 +1,4 @@
-const symbols = ['+', '-', '𝐱', '/']
+const symbols = ['+', '-', '𝐱', '÷']
 
 function mathProblemGenerator(min , max) {
 
@@ -7,7 +7,7 @@ function mathProblemGenerator(min , max) {
     let symbol = symbols[Math.floor(Math.random()*symbols.length)];
     let divider = Math.ceil(Math.random() * 10) + 1
 
-    if (symbol === '/') {
+    if (symbol === '÷') {
         int1 = int2 * divider  ;
         return `${int1} ${symbol} ${int2}`
     }
