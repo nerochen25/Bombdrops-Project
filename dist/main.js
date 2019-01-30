@@ -130,7 +130,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _bom
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nconst symbols = ['+', '-', '*', '/']\n\nfunction mathProblemGenerator(min , max) {\n\n    let int1 = Math.ceil(Math.random() * (max-min) + min) ;\n    let int2 = Math.ceil(Math.random() * (max-min) + min) ;\n    let symbol = symbols[Math.floor(Math.random()*symbols.length)];\n    let divider = Math.ceil(Math.random() * 10) + 1\n\n    if (symbol === '/') {\n        int1 = int2 * divider  ;\n        return `${int1} ${symbol} ${int2}`\n    }\n    \n    if (symbol === '-' && int1 < int2) {\n        return `${int2} ${symbol} ${int1}`\n    }\n\n    if (symbol === '*' && int1 > 10 && int2 > 10) {\n        int1 = int1 - 10\n    }\n\n    return `${int1} ${symbol} ${int2}`\n} \n\n/* harmony default export */ __webpack_exports__[\"default\"] = (mathProblemGenerator);\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/math_problem_generator.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nconst symbols = ['+', '-', '𝐱', '/']\n\nfunction mathProblemGenerator(min , max) {\n\n    let int1 = Math.ceil(Math.random() * (max-min) + min) ;\n    let int2 = Math.ceil(Math.random() * (max-min) + min) ;\n    let symbol = symbols[Math.floor(Math.random()*symbols.length)];\n    let divider = Math.ceil(Math.random() * 10) + 1\n\n    if (symbol === '/') {\n        int1 = int2 * divider  ;\n        return `${int1} ${symbol} ${int2}`\n    }\n    \n    if (symbol === '-' && int1 < int2) {\n        return `${int2} ${symbol} ${int1}`\n    }\n\n    if (symbol === '𝐱' && int1 > 10 && int2 > 10) {\n        int1 = int1 - 10\n    }\n\n    return `${int1} ${symbol} ${int2}`\n} \n\n/* harmony default export */ __webpack_exports__[\"default\"] = (mathProblemGenerator);\n\n\n\n\n\n\n//# sourceURL=webpack:///./src/math_problem_generator.js?");
 
 /***/ }),
 
@@ -142,7 +142,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nconst symbols = ['+', '-', '*
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nfunction mathProblemSolver(str) {\n    let mathElements = str.split(' ');\n    let int1 = parseInt(mathElements[0]);\n    let int2 = parseInt(mathElements[2]);\n    if (mathElements[1] === '+') {\n        return int1 + int2;\n    }\n\n    if (mathElements[1] === '-') {\n        return int1 - int2;\n    }\n\n    if (mathElements[1] === '*') {\n        return int1 * int2;\n    }\n\n    if (mathElements[1] === '/') {\n        return parseInt(int1 / int2);\n    }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (mathProblemSolver);\n\n//# sourceURL=webpack:///./src/math_problem_solver.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nfunction mathProblemSolver(str) {\n    let mathElements = str.split(' ');\n    let int1 = parseInt(mathElements[0]);\n    let int2 = parseInt(mathElements[2]);\n    if (mathElements[1] === '+') {\n        return int1 + int2;\n    }\n\n    if (mathElements[1] === '-') {\n        return int1 - int2;\n    }\n\n    if (mathElements[1] === '𝐱') {\n        return int1 * int2;\n    }\n\n    if (mathElements[1] === '/') {\n        return parseInt(int1 / int2);\n    }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (mathProblemSolver);\n\n//# sourceURL=webpack:///./src/math_problem_solver.js?");
 
 /***/ }),
 

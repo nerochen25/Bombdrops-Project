@@ -10,7 +10,7 @@ function mathProblemSolver(str) {
         return int1 - int2;
     }
 
-    if (mathElements[1] === '*') {
+    if (mathElements[1] === '𝐱') {
         return int1 * int2;
     }
 
