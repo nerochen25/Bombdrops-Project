@@ -94,13 +94,13 @@ class Bomb {
             this.height, //sHeight, sqeeze the image shorter
             this.moveRight + 150, //dx, move bomb to right by increasing this
             this.moveDown, //dy, move bomb downward by increasing this
-            this.width / this.numberOfFrames - 320, //dWidth, width size of the image
-            this.height - 600 //dHeight, height size of the image
+            this.width / this.numberOfFrames - 340, //dWidth, width size of the image
+            this.height - 580 //dHeight, height size of the image
         );
         
-        this.context.fillText(this.mathProblem, this.moveRight + 60, this.moveDown + 120);
+        this.context.fillText(this.mathProblem, this.moveRight + 46, this.moveDown + 120);
         this.context.fillStyle = 'white';
-        this.context.font = '17px Coiny';
+        this.context.font = '21px Coiny';
     };
 
     getFrameWidth() {
