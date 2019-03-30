@@ -8,8 +8,10 @@ bombImage.src = './image_resource/bomb_sprite_sheet.png';
 let myStorage = window.localStorage;
 
 var canvas = document.getElementById("bombdropsAnimation");
-  canvas.width = 1400;
-  canvas.height = 1200; 
+//   canvas.width = 1400;
+//   canvas.height = 1200; 
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
   
 var speedMeteor = document.getElementById('speed_meteor');
 

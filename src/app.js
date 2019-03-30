@@ -15,9 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
   let gameBegin = document.getElementById('game_begin')
   gameBegin.style.display = 'none';
 
+  let gameMusic = document.getElementById('game_music');
+
   startGameBtn.addEventListener('click', function() {
     let game = new Game(ctx)
     window.setTimeout(game.gameLoop, 20000);
+    gameMusic.play();
     
     gameBegin.style.display = "block";
     beforeGame.style.display = "none";
