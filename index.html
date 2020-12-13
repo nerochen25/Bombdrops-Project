@@ -1,102 +1,107 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Bombdrops</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" media="screen" href="./dist/index.css" />
-        <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
-        <link rel="shortcut icon" type="image/png" href="image_resource/bomb_new_favicon.png"/>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bombdrops</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./dist/index.css" />
+    <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="image_resource/bomb_new_favicon.png" />
 
 
-    </head>
-    <body id='body'>
+</head>
 
-        <div id="player_name_div">
-            <div id='before_game'>
-                <h1 id='logo_h1'>
-                    Bomb  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Drops
-                </h1>
+<body id='body'>
+    <div id="player_name_div">
+        <div id='before_game'>
+            <div id='logo_container'>
+                <h1 id="logo_h1">Bomb</h1>
                 <img id='bomb_gif' src="./image_resource/bomb.gif" alt="">
-                <br/>
-                <input id='player_name_input' type="text" placeholder="Enter Name">
-                <br/>
-                <select id='select_level'>
-                    <option value="Default">Select a level</option>
-                    <option value="Easy">Easy</option>
-                    <option value="Normal">Normal</option>
-                    <option value="Difficult">Difficult</option>
-                    <option value="Expert">Expert</option>
-                </select>
-                <button id='start_game_btn' style="display: none">Start Game</button>
-                <ul id="instruction_list">
-                    <li>☛ Initial speed is 1.5 after game starts</li>
-                    <li>☛ Formula for point system: (speed x 1,000 pts)</li>
-                    <li>☛ Allows 4 missing bombs with speed from 1 to 2.5</li>
-                    <li>☛ Allows 5 missing bombs with speed from 2.75 to 3.25</li>
-                    <li>☛ Allows 6 missing bombs with highest speed, 3.5</li>
-                </ul>
-                <div id="github-linkedin"> 
-                        <p class='visit_me' style="color: #397e95">Visit my Github and LinkedIn below</p>
-                        <a id="github" href="https://github.com/nerochen25">
-                          <img id="github-logo" src="https://img.icons8.com/metro/1600/github.png"/>
-                        </a>
-                        <a id="linkedin" href="https://www.linkedin.com/in/nerochen25">
-                          <img id="linkedin-logo" src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-linkedin-circle-512.png"/>
-                        </a>
-                </div>
-                <h3 id="copy_right">Copyright Ⓒ 2019 BombDrops by Nero Chen</h3>
-
+                <h1 id="logo_h1">Drops</h1>
             </div>
-            <br/>
-            <div id='game_begin'>
-                <input id='solution_input' type="number" >
-                <br />
+
+            <input id='player_name_input' type="text" placeholder="Enter Name">
+
+            <select id='select_level'>
+                <option value="Default">Select a level</option>
+                <option value="Easy">Easy</option>
+                <option value="Normal">Normal</option>
+                <option value="Difficult">Difficult</option>
+                <option value="Expert">Expert</option>
+            </select>
+            <button id='start_game_btn' style="display: none">Start Game</button>
+            <ul id="instruction_list">
+                <li>☛ Initial speed is 1.5 after game starts</li>
+                <li>☛ Formula for point system: (speed x 1,000 pts)</li>
+                <li>☛ Allows 4 missing bombs with speed from 1 to 2.5</li>
+                <li>☛ Allows 5 missing bombs with speed from 2.75 to 3.25</li>
+                <li>☛ Allows 6 missing bombs with highest speed, 3.5</li>
+            </ul>
+            <div id="github-linkedin">
+                <p class='visit_me' style="color: #0000008f">Visit my Github and LinkedIn below</p>
+                <a id="github" href="https://github.com/nerochen25">
+                    <img id="github-logo" src="https://img.icons8.com/metro/1600/github.png" />
+                </a>
+                <a id="linkedin" href="https://www.linkedin.com/in/nerochen25">
+                    <img id="linkedin-logo"
+                        src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-linkedin-circle-512.png" />
+                </a>
+                <h3 id="copy_right">Copyright Ⓒ 2020 BombDrops by Nero Chen</h3>
+            </div>
+
+        </div>
+        <div id='game_begin' style="display: none">
+            <div id='game_data_div'>
+                <h2 id='speed_meteor'></h2>
+                <h2 id='player_score'></h2>
+                <h2 id='missed_bomb'></h2>
+            </div>
+            <div id="user_input_container">
+                <input id='solution_input' type="number">
                 <button id='reduce_speed_btn' style="display: none">Slow Down</button>
                 <button id='increase_speed_btn' style="display: none">Speed Up</button>
-                <ul style="color:aliceblue; margin-top:30px;font-size:16pt">
-                    <li><h2>Game over after missing 4 bombs</h2></li>
+                <ul id="rule_reminder">
+                    <li>
+                        <h2>Game over after missing 4 bombs</h2>
+                    </li>
                 </ul>
-            
-               
-            </div> 
+            </div>
+
+
         </div>
-        <div id='game_data_div'>
-            <h2 id='speed_meteor'></h2>
-            <h2 id='player_score'></h2>
-            <h2 id='missed_bomb'></h2>
-        </div>
-        <div id="game_over_div" style="display: none;">
-            <h1 id= "your_score">Your Score</h1>
+        <div id="game_over_div" style="display: none">
+            <h1 id="your_score">Your Score</h1>
             <h2 id="my_score"></h2>
-            <br />
             <div id="score_board">
-                <h1 id="top_10_scores">👑 Top 10 Score Board 👑</h1> <hr />
+                <h1 id="top_10_scores">👑 Top 10 Score Board 👑</h1>
+                <hr />
                 <ul id='score_list'></ul>
             </div>
-            
             <button id='restart_game_btn' onClick="window.location.reload()">Restart game</button>
-
-
-            <div id="github-linkedin" > 
-                        <p style="color: #f7b45a">Visit my Github and LinkedIn below</p>
-                        <a id="github" href="https://github.com/nerochen25">
-                          <img id="github-logo" src="https://img.icons8.com/metro/1600/github.png"/>
-                        </a>
-                        <a id="linkedin" href="https://www.linkedin.com/in/nerochen25">
-                          <img id="linkedin-logo" src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-linkedin-circle-512.png"/>
-                        </a>
+            <div id="github-linkedin">
+                <p style="color: #0000008f">Visit my Github and LinkedIn below</p>
+                <a id="github" href="https://github.com/nerochen25">
+                    <img id="github-logo" src="https://img.icons8.com/metro/1600/github.png" />
+                </a>
+                <a id="linkedin" href="https://www.linkedin.com/in/nerochen25">
+                    <img id="linkedin-logo"
+                        src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-shapes-2-free/128/social-linkedin-circle-512.png" />
+                </a>
             </div>
-            <h3 id="copy_right_on_board_page">Copyright Ⓒ 2019 BombDrops by Nero Chen</h3>
+            <h3 id="copy_right_on_board_page">Copyright Ⓒ 2020 BombDrops by Nero Chen</h3>
         </div>
+        <canvas id='bombdropsAnimation'></canvas>
 
-        <canvas id='bombdropsAnimation'><button id='start_game_btn'>Start Game</button></canvas>
-    
-        <script type="application/javascript" src="./dist/main.js"></script>
-    </body>
+    </div>
+
+
+    <script type="application/javascript" src="./dist/main.js"></script>
+</body>
+
 </html>

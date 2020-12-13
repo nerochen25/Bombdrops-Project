@@ -44,14 +44,14 @@ class Bomb {
         this.ticksPerFrame = options.tickPerFrame || 0;
         this.numberOfFrames = options.numberOfFrames || 1;
         this.moveDown = 0; //falling from the top but randomizing moveDown later to make a raining bomb view
-        this.moveRight = Math.random() * 1000;  
+        this.moveRight = Math.random() * (window.innerWidth - 300);  
         this.context = options.context;
         this.width = options.width;
         this.height = options.height;
         this.image = bombImage;
         this.explosionImage = explosionImage;
         this.mathProblem = String(mathProblemGenerator(1,20));
-        this.mathSolution = mathProblemSolver(this.mathProblem)
+        this.mathSolution = mathProblemSolver(this.mathProblem);
     };
     
     update() {
@@ -64,26 +64,24 @@ class Bomb {
             if (this.frameIndex < this.numberOfFrames - 1) {
                 this.frameIndex += 1; //frequency of frames                
                 this.moveDown += speed; //speed of falling   
-                this.speed = speed
+                this.speed = speed;
                 this.context.clearRect(0,0, this.width, this.height);
-
-                if (this.moveDown >= 1500) {  
+                
+                if (this.moveDown >= this.height) {  
                     this.missed += 1;
                     missedBombs += 1;
-                    console.log(missedBombs)
                     this.moveDown = this.speed;
-                    this.moveRight = Math.random() * 1000 // randmize each bomb's falling position
+                    let windowWidth = window.innerWidth;
+                    this.moveRight = Math.random() * (windowWidth - windowWidth * 0.20); // randmize each bomb's falling position
                     this.mathProblem = String(mathProblemGenerator(1,20));
-                    this.mathSolution = mathProblemSolver(this.mathProblem)
+                    this.mathSolution = mathProblemSolver(this.mathProblem);
                 } 
             } else {
                 this.context.clearRect(0,0, this.width, this.height);
                 this.frameIndex = 0;
             }
         }
-    };
-
-
+    }
 
     render() {
         this.context.drawImage(
