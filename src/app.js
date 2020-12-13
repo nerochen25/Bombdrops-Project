@@ -12,18 +12,18 @@ document.addEventListener("DOMContentLoaded", () => {
   let gameDataDiv = document.getElementById('game_data_div');
   gameDataDiv.style.display = "none";
 
-  let gameBegin = document.getElementById('game_begin')
+  let gameBegin = document.getElementById('game_begin');
   gameBegin.style.display = 'none';
 
-  let gameMusic = document.getElementById('game_music');
+  // let gameMusic = document.getElementById('game_music');
 
   startGameBtn.addEventListener('click', function() {
     let game = new Game(ctx)
     window.setTimeout(game.gameLoop, 20000);
-    gameMusic.play();
+    // gameMusic.play();
     
-    gameBegin.style.display = "block";
+    gameBegin.style.display = "flex";
     beforeGame.style.display = "none";
-    gameDataDiv.style.display = "block";
-  })
+    gameDataDiv.style.display = "flex";
+  });
 });

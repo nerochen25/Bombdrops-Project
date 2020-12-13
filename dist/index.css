@@ -1,11 +1,16 @@
 #body {
-    background-image: url('../image_resource/pink_city.gif');
-    /* background-size: cover; */
-    background-repeat: no-repeat;
+    /* background-image: url('../image_resource/pink_city.gif'); */
+    background-size: cover;
+    /* background-repeat: no-repeat; */
     font-family: 'Coiny', cursive; 
     font-family: 'Luckiest Guy', cursive;
-    height:884px;
+    height:100vh;
     overflow: hidden;
+    margin: 0 auto;
+    background: #CC95C0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 #player_name {
@@ -13,25 +18,59 @@
     top: 0px;
 }
 
-
 #player_name_div {
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    height: auto;
-    margin-bottom: 70px;
-    font-family: 'Coiny', cursive;
     font-family: 'Luckiest Guy', cursive;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+    position: relative;
+    /* height: auto; */
+    flex-direction: column;
+    overflow: scroll;
+}
+
+#user_input_container {
+    position: fixed;
+    bottom: 20px;
 }
 
 #solution_input {
     font-size: 30px;
-    margin-bottom: 20px;
     color: #23274B;
     border-radius: 7px;
     background-color: #ffffff8f;
-    width: 48%;
+    width: 400px;
     text-align: center;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+select {
+    border: none;
+    outline: none;
+}
+
+#rule_reminder {
+    color: #0000008f; 
+    margin-top: 30px;
+    font-size: 16pt;
+    padding: 0;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #0000008f; 
 }
 
 #increase_speed_btn {
@@ -90,6 +129,7 @@
     color: #177b8dd4;
     font-size:250%;
     text-shadow: 2px 2px grey;
+    margin: 10px 0;
 }
 
 #falling_position {
@@ -100,6 +140,7 @@
     color: #eb3569;
     font-size:250%;
     text-shadow: 2px 2px grey;
+    margin: 10px 0;
 }
 
 #total_life {
@@ -109,33 +150,37 @@
 }
 
 #bombdropsAnimation {
-    margin-top: -600px;
+    /* margin-top: -600px; */
+    width: 100vw;
+    position: fixed;
+    top: -200px;
+    bottom: -200px;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 #player_score {
     color: #459947;
     font-size:250%;
     text-shadow: 2px 2px grey;
+    margin: 10px 0;
 }
 
 #start_game_btn {
-    width: 50%;
+    width: 400px;
     background-color: #177b8dd4;
-    box-sizing: inherit;
     color: #FFFFFF !important;
     height: 3rem;
-    line-height: 3rem;
     font-size: 1.2rem;
-    padding: -7px 43px;
     border: none;
-    position: relative;
-    -webkit-appearance: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: 350;
     transition: all 0.25s ease-in-out !important;
     text-align: center;
-    text-decoration: none;
     font-family: 'Coiny', cursive;
     font-family: 'Luckiest Guy', cursive;
     margin-bottom: 20px;
@@ -147,51 +192,67 @@
 
 #player_name_input {
     font-size: 32px;
-    margin-bottom: 20px;
+    margin: 20px 0px;
     color: #23274B;
-    border-radius: 7px;
+    border-radius: 8px;
     background-color: #ffffff8f;
-    width: 50%;
+    width: 400px;
     text-align: center;
     font-family: 'Coiny', cursive;
-    margin-top:30px;
+    padding: 0;
+    border: none;
 }
 
-#logo_h1 {
+#logo_container {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
     font-family: 'Luckiest Guy', cursive;
-    font-size: 52pt;
-    margin-bottom: -214px;
     z-index: 1;
 }
 
+#logo_h1 {
+    font-size: 60px;
+    margin-top: 120px;
+}
+
 #bomb_gif {
-    width: 160px;
+    width: 130px;
 }
 
 #game_over_div {
     width: 800px; 
-    margin:0 auto;
+    margin: 0 auto;
     align-content: center;
     align-items: center;
     text-align: center;
     font-family: 'Luckiest Guy', cursive;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* justify-content: center; */
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 #my_score {
     font-size: 30pt;
     color: #426789;
-    margin-top: -19px;
-    margin-bottom: -14px;
+    margin: 0 auto;
+    padding: 0;
+    margin-bottom: 10px;
 }
 
 #your_score {
     font-size: 40pt;
+    margin: 30px 0px;
+    margin-bottom: 10px;
 }
 
 #top_10_scores {
     font-size: 30pt;
-    padding-top: 37px;
     color: white;
+    margin: 20px 50px;
 }
 
 #score_list {
@@ -200,22 +261,37 @@
     text-align: left;
     align-content: center;
     align-items: center;
-    padding-left: 270px;
+    padding: 0;
+    margin: 20px 100px;
+    -webkit-user-modify: read-write-plaintext-only;
+}
+
+#score_list_item {
+    /* text-align-last: justify; */
+    list-style: decimal !important;
 }
 
 li {
-    padding-top: 10px;
+    padding: 5px;
     list-style: none;
-    color: #f7b45a;
+    color:aliceblue; ;
 }
 
 #before_game {
+    min-width: 800px;
+    max-width: 800px;
     width:800px; 
-    margin:0 auto;
+    height: 100vh;
+    margin: 10px 10px;
     align-content: center;
-    align-items: center;
     text-align: center;
     font-family: 'Luckiest Guy', cursive;
+    /* justify-content: center; */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    /* display: none; */
+    z-index: 2;
 }
 
 #game_begin {
@@ -224,23 +300,32 @@ li {
     align-content: center;
     align-items: center;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* display: none; */
+    z-index: 2;
 }
 
 #game_data_div {
-    padding-left: 30px;
+    position: fixed;
+    left: 40px;
+    top: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
 }
 
 #instruction_list {
     color: white;
-    margin-bottom: 50px;
     font-family: 'Fredoka One', cursive;
     background-color: #04040482;
-    font-size: 13pt;
+    font-size: 12pt;
     border-radius: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-    width: 67%;
+    height: auto;
+    width: 500px;
     margin: 0 auto;
+    padding: 5px;
 }
 
 #instruction_list li {
@@ -248,24 +333,24 @@ li {
 }
 
 #copy_right {
-    color: #3d7f91;
-    font-size: 13pt;
-    margin-top: 0px;
-    margin-bottom: -30px;
+    color: #0000008f;
+    font-size: 12pt;
+    margin: 0 auto;
 }
 
 #score_board {
     background: #0000008f;
-    padding-bottom: 10px;
     border-radius: 10px;
+    /* padding: 25px; */
+    width: 80%;
 }
 
 #github-logo {
-    width: 60px;
+    width: 50px;
 }
   
 #linkedin-logo {
-    width: 60px;
+    width: 50px;
 };
   
 #github-linkedin {
@@ -273,26 +358,26 @@ li {
     flex-direction: row;
     justify-content: space-between;
     width: 150px;
+    color: #0000008f;
 }
   
 
   #copy_right_on_board_page {
-    color: #3d7f91;
+    color: #0000008f;
     font-size: 13pt;
     margin-top: 0px;
-    margin-bottom: -30px;
+    margin-bottom: 30px;
   }
 
   
 #restart_game_btn {
-    width: 50%;
+    width: 400px;
     background-color: #177b8dd4;
-    box-sizing: inherit;
     color: #FFFFFF !important;
     height: 4rem;
     line-height: 5rem;
     font-size: 2rem;
-    padding: -7px 43px;
+    /* padding: -7px 43px; */
     border: none;
     position: relative;
     -webkit-appearance: none;
@@ -304,8 +389,7 @@ li {
     text-decoration: none;
     font-family: 'Coiny', cursive;
     font-family: 'Luckiest Guy', cursive;
-    margin-bottom: 100px;
-    margin-top: 100px;
+    margin: 20px 0px;
 }
 
 #restart_game_btn:hover {
@@ -313,23 +397,16 @@ li {
 }
 
 #select_level {
-    width: 50%;
+    width: 400px;
     background-color: #11141e;
-    box-sizing: inherit;
     color: #FFFFFF !important;
-    height: 3rem;
-    line-height: 3rem;
     font-size: 1.2rem;
-    padding: -7px 43px;
     border: none;
-    position: relative;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: 350;
     transition: all 0.25s ease-in-out !important;
-    text-align: center;
-    text-decoration: none;
-    font-family: 'Coiny', cursive;
     font-family: 'Luckiest Guy', cursive;
     margin-bottom: 20px;
+    padding: 10px;
 }
