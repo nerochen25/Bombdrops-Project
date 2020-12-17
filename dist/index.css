@@ -173,8 +173,7 @@ h2 {
     width: 400px;
     background-color: #177b8dd4;
     color: #FFFFFF !important;
-    height: 3rem;
-    font-size: 1.2rem;
+    font-size: 25px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -182,7 +181,6 @@ h2 {
     transition: all 0.25s ease-in-out !important;
     text-align: center;
     font-family: 'Coiny', cursive;
-    font-family: 'Luckiest Guy', cursive;
     margin-bottom: 20px;
 }
 
